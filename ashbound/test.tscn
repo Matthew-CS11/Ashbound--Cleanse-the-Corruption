@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cqlxdy6es0j3m"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mf4mk"]
+albedo_color = Color(0, 1, 1, 1)
+
+[node name="test" type="Node3D" unique_id=1952443299]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1264446241]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.934589, 0.554657, -2.2330627)
+size = Vector3(1000, 2, 1000)
+material = SubResource("StandardMaterial3D_mf4mk")
