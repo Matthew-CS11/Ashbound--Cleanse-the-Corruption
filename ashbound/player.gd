@@ -1,5 +1,8 @@
 extends CharacterBody3D
 class_name Player
+@onready var animation_tree: AnimationTree = $"Neck/Camera3D/fps-knife/AnimationTree"
+@onready var animation_player: AnimationPlayer = $"Neck/Camera3D/fps-knife/AnimationPlayer"
+
 
 const SPEED = 10.0
 const JUMP_VELOCITY = 4.5
@@ -25,6 +28,13 @@ func _ready() -> void:
 	#health -= amt
 	#if health <= 0:
 		#die()
+
+func _process(delta: float) -> void:
+	var state_machine = animation_tree.get("parameters/playback")
+	if Input.is_action_just_pressed("left click"):
+		state_machine.travel("melee")
+	if Input.is_action_just_pressed("right click"):
+		state_machine.travel("fire")
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
