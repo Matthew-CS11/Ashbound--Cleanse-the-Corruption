@@ -1,8 +1,11 @@
 extends CharacterBody3D
 class_name Player
-@onready var animation_tree: AnimationTree = $"Neck/Camera3D/fps-knife/AnimationTree"
-@onready var animation_player: AnimationPlayer = $"Neck/Camera3D/fps-knife/AnimationPlayer"
+@onready var knife_animation_tree: AnimationTree = $"Neck/Camera3D/fps-knife/AnimationTree"
+@onready var pistol_animation_tree: AnimationTree = $"Neck/Camera3D/fps-c19/AnimationTree"
+@onready var ak_animation_tree: AnimationTree = $"Neck/Camera3D/fps-ak/AnimationTree"
 
+@onready var animation_player: AnimationPlayer = $"Neck/Camera3D/fps-knife/AnimationPlayer"
+var num = 1
 
 const SPEED = 10.0
 const JUMP_VELOCITY = 4.5
@@ -10,6 +13,9 @@ const SPRINT_VELOCITY = 1.5
 const BOB_WALK_SPEED = 14.0
 const BOB_SPRINT_SPEED = 22.0
 const BOB_INTENSITY = .50
+@onready var fps_knife: Node3D = $"Neck/Camera3D/fps-knife"
+@onready var fps_c_19: Node3D = $"Neck/Camera3D/fps-c19"
+@onready var fps_ak: Node3D = $"Neck/Camera3D/fps-ak"
 
 @export var max_health := 50
 
@@ -30,7 +36,45 @@ func _ready() -> void:
 		#die()
 
 func _process(delta: float) -> void:
-	var state_machine = animation_tree.get("parameters/playback")
+	var state_machine = knife_animation_tree.get("parameters/playback")
+	var state_machinep = pistol_animation_tree.get("parameters/playback")
+	var state_machinea = ak_animation_tree.get("parameters/playback")
+		
+	if Input.is_action_just_pressed("MWdown"):
+		num +=1
+		if num>3:
+			num=1
+		if num == 1:
+			state_machine.travel("take")
+			fps_knife.visible=true
+			fps_c_19.visible=false
+			fps_ak.visible=false
+		if num ==2:
+			state_machinep.travel("take")
+			fps_knife.visible=false
+			fps_c_19.visible=true
+			fps_ak.visible=false
+		if num==3:
+			state_machinea.travel("take")
+			fps_knife.visible=false
+			fps_c_19.visible=false
+			fps_ak.visible=true
+	if Input.is_action_just_pressed("MWup"):
+		num -=1
+		if num<1:
+			num=3
+		if num == 1:
+			fps_knife.visible=true
+			fps_c_19.visible=false
+			fps_ak.visible=false
+		if num ==2:
+			fps_knife.visible=false
+			fps_c_19.visible=true
+			fps_ak.visible=false
+		if num==3:
+			fps_knife.visible=false
+			fps_c_19.visible=false
+			fps_ak.visible=true
 	if Input.is_action_just_pressed("left click"):
 		state_machine.travel("melee")
 	if Input.is_action_just_pressed("right click"):
