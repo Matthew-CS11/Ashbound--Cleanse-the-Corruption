@@ -9,7 +9,7 @@ const JUMP_VELOCITY = 4.5
 const SPRINT_VELOCITY = 1.5
 const BOB_WALK_SPEED = 14.0
 const BOB_SPRINT_SPEED = 22.0
-const BOB_INTENSITY = .25
+const BOB_INTENSITY = .50
 
 @export var max_health := 50
 
