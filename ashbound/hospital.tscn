@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://17s242itcy78"]
 
-[ext_resource type="PackedScene" uid="uid://dusbwig0dsfjj" path="res://Player.tscn" id="1_q6ha6"]
+[ext_resource type="PackedScene" path="res://Player.tscn" id="1_q6ha6"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_mj0lg"]
 vertices = PackedVector3Array(-499.5, -0.5, -499.5, -499.5, -0.5, 499.5, 499.5, -0.5, 499.5, 499.5, -0.5, -499.5)
@@ -21,6 +21,9 @@ glow_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q6ha6"]
 albedo_color = Color(0.22959325, 0.22959325, 0.22959322, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4xls1"]
+albedo_color = Color(1, 0.7836168, 0.49156135, 0.42745098)
 
 [node name="Hospital" type="NavigationRegion3D" unique_id=813909543]
 navigation_mesh = SubResource("NavigationMesh_mj0lg")
@@ -68,9 +71,27 @@ size = Vector3(277.29303, 59.576477, 16.657959)
 [node name="Front_desk" type="Node3D" parent="Hospital building/Front_interior" unique_id=386640078]
 
 [node name="Desk_wall" type="CSGBox3D" parent="Hospital building/Front_interior/Front_desk" unique_id=1098300782]
-transform = Transform3D(0.68239397, 0, -0.73098457, 0, 1, 0, 0.73098457, 0, 0.68239397, 25.856094, -0.033106327, 192.2087)
+transform = Transform3D(0.68239397, 0, -0.73098457, 0, 1, 0, 0.73098457, 0, 0.68239397, 25.856094, -0.18441248, 192.2087)
 use_collision = true
-size = Vector3(10, 2, 1)
+size = Vector3(10, 1.6973877, 1)
+material = SubResource("StandardMaterial3D_4xls1")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Hospital building/Front_interior/Front_desk/Desk_wall" unique_id=141194528]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8371277, 0, -2.648529)
+[node name="Desk_left_wall" type="CSGBox3D" parent="Hospital building/Front_interior/Front_desk" unique_id=224483339]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.612425, 1.5285358, 183.8576)
+use_collision = true
+size = Vector3(1, 5, 10.140869)
+material = SubResource("StandardMaterial3D_4xls1")
+
+[node name="Desk_right_wall" type="CSGBox3D" parent="Hospital building/Front_interior/Front_desk" unique_id=698818732]
+transform = Transform3D(0.03905055, 0, 0.9992373, 0, 1, 0, -0.9992373, 0, 0.03905055, 34.002945, 1.5285358, 195.89325)
+use_collision = true
+size = Vector3(1, 5, 10.222778)
+material = SubResource("StandardMaterial3D_4xls1")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Hospital building/Front_interior" unique_id=380602316]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.715343, 1.4951134, 200.07497)
+size = Vector3(1, 5, 7.1606445)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Hospital building/Front_interior" unique_id=1978020445]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.715343, 1.4951134, 213.38516)
+size = Vector3(1, 5, 8.088135)

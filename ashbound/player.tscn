@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://dusbwig0dsfjj"]
+[gd_scene format=4 uid="uid://b5hen48aw6843"]
 
 [ext_resource type="Script" uid="uid://6txr0hhkenxo" path="res://player.gd" id="1_kpjcp"]
 [ext_resource type="Material" uid="uid://b4p40x2e7uc4q" path="res://addons/fps-hands/fps-knife/resources/arms.tres" id="2_dw050"]
