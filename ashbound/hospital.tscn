@@ -6,11 +6,31 @@
 vertices = PackedVector3Array(-499.5, -0.5, -499.5, -499.5, -0.5, 499.5, 499.5, -0.5, 499.5, 499.5, -0.5, -499.5)
 polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_q6ha6"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_4xls1"]
+sky_material = SubResource("ProceduralSkyMaterial_q6ha6")
+
+[sub_resource type="Environment" id="Environment_422xv"]
+background_mode = 2
+sky = SubResource("Sky_4xls1")
+tonemap_mode = 2
+glow_enabled = true
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q6ha6"]
 albedo_color = Color(0.22959325, 0.22959325, 0.22959322, 1)
 
 [node name="Hospital" type="NavigationRegion3D" unique_id=813909543]
 navigation_mesh = SubResource("NavigationMesh_mj0lg")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=625525522]
+environment = SubResource("Environment_422xv")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1836082579]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1591232619]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
@@ -20,3 +40,7 @@ material = SubResource("StandardMaterial3D_q6ha6")
 
 [node name="player" parent="." unique_id=263463062 instance=ExtResource("1_q6ha6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 21.868216, 0)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=1951613834]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.4385, 11.608383, 0)
+size = Vector3(10, 10, 10)
