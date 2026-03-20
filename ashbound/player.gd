@@ -64,21 +64,34 @@ func _process(delta: float) -> void:
 		if num<1:
 			num=3
 		if num == 1:
+			state_machine.travel("take")
 			fps_knife.visible=true
 			fps_c_19.visible=false
 			fps_ak.visible=false
 		if num ==2:
+			state_machinep.travel("take")
 			fps_knife.visible=false
 			fps_c_19.visible=true
 			fps_ak.visible=false
 		if num==3:
+			state_machinea.travel("take")
 			fps_knife.visible=false
 			fps_c_19.visible=false
 			fps_ak.visible=true
-	if Input.is_action_just_pressed("left click"):
-		state_machine.travel("melee")
-	if Input.is_action_just_pressed("right click"):
-		state_machine.travel("fire")
+	if Input.is_action_pressed("left click"):
+		if num == 1:
+			state_machine.travel("fire")
+		if num == 2:
+			state_machinep.travel("fire")
+		if num == 3:
+			state_machinea.travel("fire")
+	if Input.is_action_pressed("right click"):
+		if num == 1:
+			state_machine.travel("melee")
+		if num == 2:
+			state_machinep.travel("melee")
+		if num == 3:
+			state_machinea.travel("melee")
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
