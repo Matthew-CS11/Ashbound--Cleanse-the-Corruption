@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://17s242itcy78"]
 
-[ext_resource type="PackedScene" path="res://Player.tscn" id="1_q6ha6"]
+[ext_resource type="PackedScene" uid="uid://b5hen48aw6843" path="res://player.tscn" id="1_q6ha6"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_mj0lg"]
 vertices = PackedVector3Array(-499.5, -0.5, -499.5, -499.5, -0.5, 499.5, 499.5, -0.5, 499.5, 499.5, -0.5, -499.5)
