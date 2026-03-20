@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://17s242itcy78"]
 
 [ext_resource type="PackedScene" uid="uid://b5hen48aw6843" path="res://player.tscn" id="1_q6ha6"]
+[ext_resource type="PackedScene" uid="uid://bdgg475uh3wtl" path="res://door.tscn" id="2_4xls1"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_mj0lg"]
 vertices = PackedVector3Array(-499.5, -0.5, -499.5, -499.5, -0.5, 499.5, 499.5, -0.5, 499.5, 499.5, -0.5, -499.5)
@@ -89,9 +90,17 @@ size = Vector3(1, 5, 10.222778)
 material = SubResource("StandardMaterial3D_4xls1")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Hospital building/Front_interior" unique_id=380602316]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.715343, 1.4951134, 200.07497)
-size = Vector3(1, 5, 7.1606445)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.541134, 1.4648399, 200.13968)
+use_collision = true
+size = Vector3(0.80178833, 5.060547, 9.051056)
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="Hospital building/Front_interior" unique_id=1978020445]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.715343, 1.4951134, 213.38516)
-size = Vector3(1, 5, 8.088135)
+[node name="CSGBox3D2" type="CSGBox3D" parent="Hospital building/Front_interior" unique_id=1443321374]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.541134, 1.4648399, 213.26599)
+use_collision = true
+size = Vector3(0.80178833, 5.060547, 8.290909)
+
+[node name="door" parent="Hospital building/Front_interior" unique_id=1928409200 instance=ExtResource("2_4xls1")]
+transform = Transform3D(-0.058313217, 0, 0.99829835, 0, 1, 0, -0.99829835, 0, -0.058313217, 41.709354, -1.0195526, 204.73982)
+
+[node name="door2" parent="Hospital building/Front_interior" unique_id=1078763441 instance=ExtResource("2_4xls1")]
+transform = Transform3D(-0.04154429, 0, 0.9991367, 0, 1, 0, -0.9991367, 0, -0.04154429, 41.55837, -1.2302147, 209.08612)

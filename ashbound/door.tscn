@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://bdgg475uh3wtl"]
+
+[ext_resource type="PackedScene" uid="uid://c51aixv8vqqhs" path="res://door.fbx" id="1_ba8gm"]
+[ext_resource type="Texture2D" uid="uid://cnokt0yyijf2" path="res://Texture2D/Normal.png" id="2_50cdl"]
+[ext_resource type="Texture2D" uid="uid://ct314j4gqgq5j" path="res://Texture2D/Metallic.png" id="3_y5njw"]
+[ext_resource type="Texture2D" uid="uid://c208qina4qnfn" path="res://Texture2D/Transmission.png" id="4_4xadh"]
+[ext_resource type="Texture2D" uid="uid://j76ewac63g04" path="res://Texture2D/Roughness.png" id="4_y5njw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6hwww"]
+albedo_texture = ExtResource("2_50cdl")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v1oua"]
+albedo_texture = ExtResource("2_50cdl")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ptf7r"]
+albedo_texture = ExtResource("2_50cdl")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_24eas"]
+albedo_texture = ExtResource("3_y5njw")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xg3tq"]
+albedo_texture = ExtResource("3_y5njw")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4xadh"]
+albedo_texture = ExtResource("4_y5njw")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_quvdd"]
+albedo_texture = ExtResource("4_4xadh")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ejk4w"]
+albedo_texture = ExtResource("3_y5njw")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ba8gm"]
+size = Vector3(0.19722821, 3.734871, 2.7609863)
+
+[node name="door" unique_id=1022892735 instance=ExtResource("1_ba8gm")]
+
+[node name="Door" parent="." index="0" unique_id=1577019732]
+transform = Transform3D(180, -1.57361e-05, 6.8784675e-13, 0, 7.86805e-06, 180, 1.57361e-05, 180, -7.86805e-06, -0.009692218, 0, -2.113657)
+
+[node name="Skeleton3D" parent="Door" index="0" unique_id=567988804]
+bones/1/position = Vector3(0, 0, 3.469447e-18)
+bones/1/rotation = Quaternion(-0.70710677, 0, 0, 0.70710677)
+bones/1/scale = Vector3(1, 1, 1)
+bones/2/position = Vector3(0, 0.010480664, 0)
+bones/3/position = Vector3(0, 0.01, 3.469447e-18)
+bones/3/rotation = Quaternion(0, 1.1920927e-07, 0, 1)
+
+[node name="Door_Hinge_2" parent="Door/Skeleton3D" index="0" unique_id=640059017]
+material_override = SubResource("StandardMaterial3D_6hwww")
+
+[node name="Door_Hinge_3" parent="Door/Skeleton3D" index="1" unique_id=1819172891]
+material_override = SubResource("StandardMaterial3D_v1oua")
+
+[node name="Frame_2" parent="Door/Skeleton3D" index="2" unique_id=901999172]
+material_override = SubResource("StandardMaterial3D_ptf7r")
+
+[node name="Handle_2" parent="Door/Skeleton3D" index="3" unique_id=984854653]
+material_override = SubResource("StandardMaterial3D_24eas")
+
+[node name="Outside_Plate_Screws_2" parent="Door/Skeleton3D" index="14" unique_id=1081872223]
+material_override = SubResource("StandardMaterial3D_xg3tq")
+
+[node name="Push_Plate_2" parent="Door/Skeleton3D" index="15" unique_id=594897569]
+material_override = SubResource("StandardMaterial3D_4xadh")
+
+[node name="Window_2" parent="Door/Skeleton3D" index="19" unique_id=1079490742]
+material_override = SubResource("StandardMaterial3D_quvdd")
+
+[node name="Window_Plate_2" parent="Door/Skeleton3D" index="20" unique_id=133160593]
+material_override = SubResource("StandardMaterial3D_ejk4w")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1" unique_id=195097988]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.07715919, 1.8828316, -0.88049316)
+shape = SubResource("BoxShape3D_ba8gm")
