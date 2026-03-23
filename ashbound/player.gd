@@ -85,6 +85,9 @@ func _process(delta: float) -> void:
 			state_machinep.travel("fire")
 		if num == 3:
 			state_machinea.travel("fire")
+			$"Neck/Camera3D/fps-ak/MuzzleFlash".visible=true
+	else:
+		$"Neck/Camera3D/fps-ak/MuzzleFlash".visible=false
 	if Input.is_action_pressed("right click"):
 		if num == 1:
 			state_machine.travel("melee")
@@ -161,3 +164,7 @@ func _physics_process(delta: float) -> void:
 	#else:
 		#get_tree().change_scene_to_file("res://lose_screen.tscn")
 	
+
+
+func _on_timer_timeout() -> void:
+	pass # Replace with function body.
