@@ -3,20 +3,29 @@
 [ext_resource type="PackedScene" uid="uid://c51aixv8vqqhs" path="res://door.fbx" id="1_ba8gm"]
 [ext_resource type="Texture2D" uid="uid://cnokt0yyijf2" path="res://Texture2D/Normal.png" id="2_50cdl"]
 [ext_resource type="Texture2D" uid="uid://ct314j4gqgq5j" path="res://Texture2D/Metallic.png" id="3_y5njw"]
-[ext_resource type="Texture2D" uid="uid://c208qina4qnfn" path="res://Texture2D/Transmission.png" id="4_4xadh"]
 [ext_resource type="Texture2D" uid="uid://j76ewac63g04" path="res://Texture2D/Roughness.png" id="4_y5njw"]
+[ext_resource type="Texture2D" uid="uid://cv7b2nub2qs3v" path="res://Texture2D/Diffuse.png" id="5_y5njw"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6hwww"]
-albedo_texture = ExtResource("2_50cdl")
+albedo_texture = ExtResource("3_y5njw")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v1oua"]
-albedo_texture = ExtResource("2_50cdl")
+albedo_texture = ExtResource("4_y5njw")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ptf7r"]
-albedo_texture = ExtResource("2_50cdl")
+albedo_texture = ExtResource("3_y5njw")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_24eas"]
-albedo_texture = ExtResource("3_y5njw")
+albedo_texture = ExtResource("4_y5njw")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_quvdd"]
+albedo_texture = ExtResource("2_50cdl")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_50cdl"]
+albedo_texture = ExtResource("4_y5njw")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y5njw"]
+albedo_texture = ExtResource("4_y5njw")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xg3tq"]
 albedo_texture = ExtResource("3_y5njw")
@@ -24,11 +33,15 @@ albedo_texture = ExtResource("3_y5njw")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4xadh"]
 albedo_texture = ExtResource("4_y5njw")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_quvdd"]
-albedo_texture = ExtResource("4_4xadh")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vqe75"]
+albedo_texture = ExtResource("4_y5njw")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6nm82"]
+transparency = 1
+albedo_color = Color(1, 1, 1, 0)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ejk4w"]
-albedo_texture = ExtResource("3_y5njw")
+albedo_texture = ExtResource("5_y5njw")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ba8gm"]
 size = Vector3(0.19722821, 3.734871, 2.7609863)
@@ -58,14 +71,26 @@ material_override = SubResource("StandardMaterial3D_ptf7r")
 [node name="Handle_2" parent="Door/Skeleton3D" index="3" unique_id=984854653]
 material_override = SubResource("StandardMaterial3D_24eas")
 
+[node name="Handle_Screws_2" parent="Door/Skeleton3D" index="4" unique_id=1620331972]
+material_override = SubResource("StandardMaterial3D_quvdd")
+
+[node name="Inside_Plate_2" parent="Door/Skeleton3D" index="9" unique_id=1986854935]
+material_override = SubResource("StandardMaterial3D_50cdl")
+
+[node name="Outside_Plate_2" parent="Door/Skeleton3D" index="13" unique_id=1284846329]
+material_override = SubResource("StandardMaterial3D_y5njw")
+
 [node name="Outside_Plate_Screws_2" parent="Door/Skeleton3D" index="14" unique_id=1081872223]
 material_override = SubResource("StandardMaterial3D_xg3tq")
 
 [node name="Push_Plate_2" parent="Door/Skeleton3D" index="15" unique_id=594897569]
 material_override = SubResource("StandardMaterial3D_4xadh")
 
+[node name="Push_Screws_2" parent="Door/Skeleton3D" index="16" unique_id=1143318893]
+material_override = SubResource("StandardMaterial3D_vqe75")
+
 [node name="Window_2" parent="Door/Skeleton3D" index="19" unique_id=1079490742]
-material_override = SubResource("StandardMaterial3D_quvdd")
+material_override = SubResource("StandardMaterial3D_6nm82")
 
 [node name="Window_Plate_2" parent="Door/Skeleton3D" index="20" unique_id=133160593]
 material_override = SubResource("StandardMaterial3D_ejk4w")
