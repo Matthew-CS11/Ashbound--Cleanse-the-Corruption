@@ -2,18 +2,19 @@
 
 [ext_resource type="PackedScene" uid="uid://c51aixv8vqqhs" path="res://door.fbx" id="1_ba8gm"]
 [ext_resource type="Texture2D" uid="uid://cnokt0yyijf2" path="res://Texture2D/Normal.png" id="2_50cdl"]
-[ext_resource type="Texture2D" uid="uid://ct314j4gqgq5j" path="res://Texture2D/Metallic.png" id="3_y5njw"]
+[ext_resource type="Texture2D" uid="uid://c208qina4qnfn" path="res://Texture2D/Transmission.png" id="4_4xadh"]
 [ext_resource type="Texture2D" uid="uid://j76ewac63g04" path="res://Texture2D/Roughness.png" id="4_y5njw"]
 [ext_resource type="Texture2D" uid="uid://cv7b2nub2qs3v" path="res://Texture2D/Diffuse.png" id="5_y5njw"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6hwww"]
-albedo_texture = ExtResource("3_y5njw")
+albedo_texture = ExtResource("5_y5njw")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v1oua"]
 albedo_texture = ExtResource("4_y5njw")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ptf7r"]
-albedo_texture = ExtResource("3_y5njw")
+albedo_color = Color(1, 1, 1, 0)
+albedo_texture = ExtResource("4_4xadh")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_24eas"]
 albedo_texture = ExtResource("4_y5njw")
@@ -21,20 +22,48 @@ albedo_texture = ExtResource("4_y5njw")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_quvdd"]
 albedo_texture = ExtResource("2_50cdl")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cu17k"]
+albedo_texture = ExtResource("4_y5njw")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t10hw"]
+albedo_texture = ExtResource("4_y5njw")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h7fda"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_urtda"]
+albedo_texture = ExtResource("5_y5njw")
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_50cdl"]
 albedo_texture = ExtResource("4_y5njw")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hwcea"]
+albedo_texture = ExtResource("5_y5njw")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l5plo"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ll3j0"]
+albedo_texture = ExtResource("5_y5njw")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hwcea"]
+load_path = "res://.godot/imported/Roughness.png-998ccf47e4d5ef66eeab0d3f80ee8e4f.s3tc.ctex"
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y5njw"]
-albedo_texture = ExtResource("4_y5njw")
+albedo_texture = SubResource("CompressedTexture2D_hwcea")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xg3tq"]
-albedo_texture = ExtResource("3_y5njw")
+albedo_texture = ExtResource("4_y5njw")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4xadh"]
 albedo_texture = ExtResource("4_y5njw")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vqe75"]
 albedo_texture = ExtResource("4_y5njw")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nvkv3"]
+albedo_texture = ExtResource("5_y5njw")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5esjk"]
+albedo_texture = ExtResource("5_y5njw")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6nm82"]
 transparency = 1
@@ -74,8 +103,29 @@ material_override = SubResource("StandardMaterial3D_24eas")
 [node name="Handle_Screws_2" parent="Door/Skeleton3D" index="4" unique_id=1620331972]
 material_override = SubResource("StandardMaterial3D_quvdd")
 
+[node name="Hinge_Nail_2" parent="Door/Skeleton3D" index="5" unique_id=1461640965]
+material_override = SubResource("StandardMaterial3D_cu17k")
+
+[node name="Hinge_Nail_3" parent="Door/Skeleton3D" index="6" unique_id=1608247578]
+material_override = SubResource("StandardMaterial3D_t10hw")
+
+[node name="Inside_Grate_2" parent="Door/Skeleton3D" index="7" unique_id=259285127]
+material_override = SubResource("StandardMaterial3D_h7fda")
+
+[node name="Inside_Grate_Screws_2" parent="Door/Skeleton3D" index="8" unique_id=807240924]
+material_override = SubResource("StandardMaterial3D_urtda")
+
 [node name="Inside_Plate_2" parent="Door/Skeleton3D" index="9" unique_id=1986854935]
 material_override = SubResource("StandardMaterial3D_50cdl")
+
+[node name="Inside_Plate_Screws_2" parent="Door/Skeleton3D" index="10" unique_id=1256674822]
+material_override = SubResource("StandardMaterial3D_hwcea")
+
+[node name="Outside_Grate_2" parent="Door/Skeleton3D" index="11" unique_id=768498668]
+material_override = SubResource("StandardMaterial3D_l5plo")
+
+[node name="Outside_Grate_Screws_2" parent="Door/Skeleton3D" index="12" unique_id=1778867047]
+material_override = SubResource("StandardMaterial3D_ll3j0")
 
 [node name="Outside_Plate_2" parent="Door/Skeleton3D" index="13" unique_id=1284846329]
 material_override = SubResource("StandardMaterial3D_y5njw")
@@ -88,6 +138,12 @@ material_override = SubResource("StandardMaterial3D_4xadh")
 
 [node name="Push_Screws_2" parent="Door/Skeleton3D" index="16" unique_id=1143318893]
 material_override = SubResource("StandardMaterial3D_vqe75")
+
+[node name="Wall_Hinge_2" parent="Door/Skeleton3D" index="17" unique_id=816240382]
+material_override = SubResource("StandardMaterial3D_nvkv3")
+
+[node name="Wall_Hinge_3" parent="Door/Skeleton3D" index="18" unique_id=1160772913]
+material_override = SubResource("StandardMaterial3D_5esjk")
 
 [node name="Window_2" parent="Door/Skeleton3D" index="19" unique_id=1079490742]
 material_override = SubResource("StandardMaterial3D_6nm82")

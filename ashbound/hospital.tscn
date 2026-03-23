@@ -125,7 +125,105 @@ transform = Transform3D(-0.04154429, 0, 0.9991367, 0, 1, 0, -0.9991367, 0, -0.04
 
 [node name="Right_hallway" type="Node3D" parent="Hospital building" unique_id=618336562]
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Hospital building/Right_hallway" unique_id=1981221480]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.188354, 1.0827026, 196.10237)
+[node name="room1" type="Node3D" parent="Hospital building/Right_hallway" unique_id=1706048051]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Hospital building/Right_hallway/room1" unique_id=1981221480]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.91312, 1.0827026, 196.10237)
+use_collision = true
+size = Vector3(7.781066, 5.8201904, 1.0096904)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Hospital building/Right_hallway/room1" unique_id=1213055591]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52.801437, 1.0827026, 196.10237)
+use_collision = true
+size = Vector3(7.1592994, 5.8201904, 1.0096904)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Hospital building/Right_hallway/room1" unique_id=1957024815]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 56.83677, 1.0827026, 187.44879)
 use_collision = true
 size = Vector3(18.331533, 5.8201904, 1.0096904)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Hospital building/Right_hallway/room1" unique_id=1535446166]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.18128, 1.0827026, 178.39336)
+use_collision = true
+size = Vector3(18.31738, 5.8201904, 1.0096904)
+
+[node name="door4" parent="Hospital building/Right_hallway/room1" unique_id=1170993903 instance=ExtResource("2_4xls1")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 46.991524, -1.0195526, 193.90202)
+
+[node name="room2" type="Node3D" parent="Hospital building/Right_hallway" unique_id=1928981827]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 0)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Hospital building/Right_hallway/room2" unique_id=1271593058]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.91312, 1.0827026, 196.10237)
+use_collision = true
+size = Vector3(7.781066, 5.8201904, 1.0096904)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Hospital building/Right_hallway/room2" unique_id=1080409684]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52.801437, 1.0827026, 196.10237)
+use_collision = true
+size = Vector3(7.1592994, 5.8201904, 1.0096904)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Hospital building/Right_hallway/room2" unique_id=1872945097]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 56.83677, 1.0827026, 187.44879)
+use_collision = true
+size = Vector3(18.331533, 5.8201904, 1.0096904)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Hospital building/Right_hallway/room2" unique_id=639879800]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.18128, 1.0827026, 178.39336)
+use_collision = true
+size = Vector3(18.31738, 5.8201904, 1.0096904)
+
+[node name="door4" parent="Hospital building/Right_hallway/room2" unique_id=905121119 instance=ExtResource("2_4xls1")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 46.991524, -1.0195526, 193.90202)
+
+[node name="room3" type="Node3D" parent="Hospital building/Right_hallway" unique_id=1331829885]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, 0)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Hospital building/Right_hallway/room3" unique_id=2073876703]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.91312, 1.0827026, 196.10237)
+use_collision = true
+size = Vector3(7.781066, 5.8201904, 1.0096904)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Hospital building/Right_hallway/room3" unique_id=923073258]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52.801437, 1.0827026, 196.10237)
+use_collision = true
+size = Vector3(7.1592994, 5.8201904, 1.0096904)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Hospital building/Right_hallway/room3" unique_id=1437745848]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 56.83677, 1.0827026, 187.44879)
+use_collision = true
+size = Vector3(18.331533, 5.8201904, 1.0096904)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Hospital building/Right_hallway/room3" unique_id=396374477]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.18128, 1.0827026, 178.39336)
+use_collision = true
+size = Vector3(18.31738, 5.8201904, 1.0096904)
+
+[node name="door4" parent="Hospital building/Right_hallway/room3" unique_id=2041710442 instance=ExtResource("2_4xls1")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 46.991524, -1.0195526, 193.90202)
+
+[node name="room4" type="Node3D" parent="Hospital building/Right_hallway" unique_id=801554144]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 0, 0)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Hospital building/Right_hallway/room4" unique_id=1374913820]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.91312, 1.0827026, 196.10237)
+use_collision = true
+size = Vector3(7.781066, 5.8201904, 1.0096904)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Hospital building/Right_hallway/room4" unique_id=2109362563]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52.801437, 1.0827026, 196.10237)
+use_collision = true
+size = Vector3(7.1592994, 5.8201904, 1.0096904)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Hospital building/Right_hallway/room4" unique_id=1377450951]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 56.83677, 1.0827026, 187.44879)
+use_collision = true
+size = Vector3(18.331533, 5.8201904, 1.0096904)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Hospital building/Right_hallway/room4" unique_id=357050377]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.18128, 1.0827026, 178.39336)
+use_collision = true
+size = Vector3(18.31738, 5.8201904, 1.0096904)
+
+[node name="door4" parent="Hospital building/Right_hallway/room4" unique_id=2105172481 instance=ExtResource("2_4xls1")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 46.991524, -1.0195526, 193.90202)
