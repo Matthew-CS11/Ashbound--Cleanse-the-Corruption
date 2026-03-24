@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bajrcxgrwxfuk"]
+
+[ext_resource type="PackedScene" uid="uid://jwthspltl5kp" path="res://assets/Dry_Trees/Model/Dry4195.FBX" id="1_vgf0b"]
+
+[node name="mold" type="Node3D" unique_id=824832928]
+
+[node name="Dry4195" parent="." unique_id=417400314 instance=ExtResource("1_vgf0b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6129447, 0, 1.3023958)
