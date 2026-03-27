@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://67lgvxergyxf"]
+
+[ext_resource type="PackedScene" uid="uid://cn7c6jtm8pgqg" path="res://Scenes/door.tscn" id="1_3t5sg"]
+[ext_resource type="PackedScene" path="res://Scenes/bed_woof.tscn" id="2_4ikea"]
+
+[node name="room1" type="Node3D" unique_id=773949795]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1881937923]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.136793, 0, 8.651652)
+use_collision = true
+size = Vector3(7.781066, 5.8201904, 1.0096904)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="." unique_id=2049100042]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.3626423, 0, 8.628542)
+use_collision = true
+size = Vector3(7.1592994, 5.8201904, 1.0096904)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="." unique_id=1697960708]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 8.571983, 0, -0.07516861)
+use_collision = true
+size = Vector3(18.331533, 5.8201904, 1.0096904)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=855686173]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.61435413, 0, -9.756599)
+use_collision = true
+size = Vector3(19.313782, 5.8201904, 1.0096904)
+
+[node name="door4" parent="." unique_id=1022892735 instance=ExtResource("1_3t5sg")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -1.9135826, -2.3202016, 6.7430134)
+
+[node name="bed_woof" parent="." unique_id=643467742 instance=ExtResource("2_4ikea")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 6.548829, -2.1846108, -6.2269487)
