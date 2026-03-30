@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://rgo67cvpjqi7"]
+
+[ext_resource type="Texture2D" uid="uid://hi7j3tu3j0pb" path="res://assets/Television_static-ezgif.com-gif-to-sprite-converter.png" id="1_mvb6l"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_267j7"]
+atlas = ExtResource("1_mvb6l")
+region = Rect2(0, 0, 640, 361)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5lowh"]
+atlas = ExtResource("1_mvb6l")
+region = Rect2(640, 0, 640, 361)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_512xe"]
+atlas = ExtResource("1_mvb6l")
+region = Rect2(1280, 0, 640, 361)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0if5p"]
+atlas = ExtResource("1_mvb6l")
+region = Rect2(1920, 0, 640, 361)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wvihi"]
+atlas = ExtResource("1_mvb6l")
+region = Rect2(2560, 0, 640, 361)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mh5fl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_267j7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5lowh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_512xe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0if5p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wvihi")
+}],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
+
+[node name="overlay" type="CanvasLayer" unique_id=1060912410]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1554077139]
+modulate = Color(1, 1, 1, 0.078431375)
+position = Vector2(574, 327.5)
+scale = Vector2(1.8031251, 1.8254846)
+sprite_frames = SubResource("SpriteFrames_mh5fl")
+autoplay = "default"
+frame_progress = 0.9434383
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=557003300]
+offset_right = 1168.0
+offset_bottom = 656.0
+color = Color(0, 0, 0, 0.5568628)
