@@ -1,11 +1,5 @@
 extends CharacterBody3D
 class_name Player
-@onready var knife_animation_tree: AnimationTree = $"Neck/Camera3D/fps-knife/AnimationTree"
-@onready var pistol_animation_tree: AnimationTree = $"Neck/Camera3D/fps-c19/AnimationTree"
-@onready var ak_animation_tree: AnimationTree = $"Neck/Camera3D/fps-ak/AnimationTree"
-
-@onready var animation_player: AnimationPlayer = $"Neck/Camera3D/fps-knife/AnimationPlayer"
-var num = 1
 
 const SPEED = 10.0
 const JUMP_VELOCITY = 4.5
@@ -13,19 +7,23 @@ const SPRINT_VELOCITY = 1.5
 const BOB_WALK_SPEED = 14.0
 const BOB_SPRINT_SPEED = 22.0
 const BOB_INTENSITY = .50
-@onready var fps_knife: Node3D = $"Neck/Camera3D/fps-knife"
-@onready var fps_c_19: Node3D = $"Neck/Camera3D/fps-c19"
-@onready var fps_ak: Node3D = $"Neck/Camera3D/fps-ak"
 
 @export var max_health := 50
 
 @onready var neck: Node3D = $Neck
 @onready var camera_3d: Camera3D = $Neck/Camera3D
-
+@onready var fps_knife: Node3D = $"Neck/Camera3D/fps-knife"
+@onready var fps_c_19: Node3D = $"Neck/Camera3D/fps-c19"
+@onready var fps_ak: Node3D = $"Neck/Camera3D/fps-ak"
+@onready var knife_animation_tree: AnimationTree = $"Neck/Camera3D/fps-knife/AnimationTree"
+@onready var pistol_animation_tree: AnimationTree = $"Neck/Camera3D/fps-c19/AnimationTree"
+@onready var ak_animation_tree: AnimationTree = $"Neck/Camera3D/fps-ak/AnimationTree"
+@onready var animation_player: AnimationPlayer = $"Neck/Camera3D/fps-knife/AnimationPlayer"
 
 var head_bob_vector = Vector2.ZERO
 var head_bob_index = 0.0
 var health : int
+var num = 1
 
 func _ready() -> void:
 	health = max_health
@@ -39,7 +37,7 @@ func _process(delta: float) -> void:
 	var state_machine = knife_animation_tree.get("parameters/playback")
 	var state_machinep = pistol_animation_tree.get("parameters/playback")
 	var state_machinea = ak_animation_tree.get("parameters/playback")
-		
+	
 	if Input.is_action_just_pressed("MWdown"):
 		num +=1
 		if num>3:
