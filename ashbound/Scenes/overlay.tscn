@@ -58,4 +58,5 @@ frame_progress = 0.9434383
 [node name="ColorRect" type="ColorRect" parent="." unique_id=557003300]
 offset_right = 1168.0
 offset_bottom = 656.0
+mouse_filter = 2
 color = Color(0, 0, 0, 0.5568628)
