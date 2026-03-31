@@ -4,6 +4,14 @@
 [ext_resource type="Script" uid="uid://cctxg66beys2h" path="res://addons/fps-hands/muzzleflash/muzzle_flash.gd" id="1_ke83n"]
 [ext_resource type="Texture2D" uid="uid://chpyd46tcdyxk" path="res://addons/fps-hands/muzzleflash/side.png" id="2_y2rbg"]
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fbtc5"]
+radius = 0.21679688
+height = 0.8553467
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_dpkpd"]
+radius = 0.115234375
+height = 0.55651855
+
 [node name="MuzzleFlash" type="Node3D" unique_id=623897327]
 script = ExtResource("1_ke83n")
 
@@ -33,3 +41,13 @@ light_energy = 0.1
 light_size = 1.0
 omni_range = 2.0
 omni_attenuation = 2.0
+
+[node name="Area3D" type="Area3D" parent="." unique_id=99307955]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D" unique_id=525342358]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0340797, 0)
+shape = SubResource("CapsuleShape3D_fbtc5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=895684667]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 1.1122606e-08, 0.25445557)
+shape = SubResource("CapsuleShape3D_dpkpd")
