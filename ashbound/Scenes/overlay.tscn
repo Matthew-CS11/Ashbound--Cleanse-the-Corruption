@@ -53,7 +53,7 @@ position = Vector2(574, 327.5)
 scale = Vector2(1.8031251, 1.8254846)
 sprite_frames = SubResource("SpriteFrames_mh5fl")
 autoplay = "default"
-frame_progress = 0.9434383
+frame_progress = 0.84089106
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=557003300]
 offset_right = 1168.0
