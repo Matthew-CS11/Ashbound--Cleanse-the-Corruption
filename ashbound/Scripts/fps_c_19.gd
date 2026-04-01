@@ -1,33 +1,57 @@
 extends Node3D
 
-@onready var muzzle: Marker3D = $Sketchfab_model/b34e1f0b138c4750adf4ba8296639418_fbx/Object_2/RootNode/Object_4/BPpistol/base/Muzzle_Marker
-@export var range: float = 100.0
+@export var range: float = 1000.0
 @export var damage: int = 25
-	
-func shoot() -> void:
-	var from = muzzle.global_position
-	var to = from + (-muzzle.global_transform.basis.z) * range
-	var space_state = get_world_3d().direct_space_state
-	var query = PhysicsRayQueryParameters3D.create(from, to)
-	
-	query.exclude = [self, get_parent()]
-	
-	var hit = space_state.intersect_ray(query)
-	
-	if hit:
-		handle_hit(hit)
 
-func handle_hit(hit: Dictionary) -> void:
-	var c = hit.collider
+@onready var camera: Camera3D = get_viewport().get_camera_3d()
+@onready var player: Player = get_tree().get_first_node_in_group("Player")
+
+func shoot() -> void:
+	if camera == null:
+		return
+		
+	var from: Vector3 = camera.global_position
+	var to: Vector3 = from + (-camera.global_transform.basis.z * range)
 	
-	if c is Area3D:
-		var a := c as Area3D
-		if a.is_in_group("damage_area"):
-			var enemy = a.owner
-			if enemy and enemy.has_method("take_damage"):
-				enemy.take_damage(damage)
+	var exclude: Array = []
+	if player != null:
+		exclude.append(player)
+		
+	var space_state := get_world_3d().direct_space_state
+	
+	for i in range(10):
+		var query := PhysicsRayQueryParameters3D.create(from, to)
+		query.collide_with_bodies = true
+		query.collide_with_areas = true
+		query.exclude = exclude
+		
+		var hit: Dictionary = space_state.intersect_ray(query)
+		
+		if hit.is_empty():
 			return
 			
-	if c is Node and (c as Node).has_method("take_damage"):
-		(c as Node).take_damage(damage)
-		return
+		var collider: Object = hit.get("collider")
+		
+		if collider == null:
+			return
+			
+		if collider is Area3D:
+			var area: Area3D = collider
+			
+			if area.is_in_group("damage_area"):
+				var enemy: Node = area.get_parent()
+				if enemy != null and enemy.has_method("take_damage"):
+					enemy.take_damage(damage)
+				return
+				
+			exclude.append(area)
+			continue
+			
+		if collider is Node and collider.has_method("take_damage"):
+			collider.take_damage(damage)
+			return
+			
+		if collider is CollisionObject3D:
+			exclude.append(collider)
+		else:
+			return

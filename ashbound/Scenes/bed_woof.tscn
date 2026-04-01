@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cufa4qumgna6g"]
 
-[ext_resource type="PackedScene" path="res://assets/bed_woof.fbx" id="1_1ilq4"]
+[ext_resource type="PackedScene" uid="uid://drywka86gx7" path="res://assets/bed_woof.fbx" id="1_1ilq4"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1ilq4"]
 size = Vector3(1, 0.9289551, 2.0024414)
