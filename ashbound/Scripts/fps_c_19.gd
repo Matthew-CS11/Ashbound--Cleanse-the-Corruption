@@ -2,10 +2,20 @@ extends Node3D
 
 @export var range: float = 1000.0
 @export var damage: int = 25
+@export var starting_ammo : int = 6
+
 
 @onready var camera: Camera3D = get_viewport().get_camera_3d()
 @onready var player: Player = get_tree().get_first_node_in_group("Player")
 
+var current_ammo : int
+var reserve_ammo: int
+var max_reserve : int = 36
+var mag_size : int = 12
+
+func _ready() -> void:
+	current_ammo = starting_ammo
+	
 func shoot() -> void:
 	if camera == null:
 		return
@@ -14,6 +24,12 @@ func shoot() -> void:
 	var to: Vector3 = from + (-camera.global_transform.basis.z * range)
 	
 	var exclude: Array = []
+	
+	if current_ammo >0:
+		current_ammo -=1
+	else:
+		print('no ammo')
+	
 	if player != null:
 		exclude.append(player)
 		
@@ -53,5 +69,6 @@ func shoot() -> void:
 			
 		if collider is CollisionObject3D:
 			exclude.append(collider)
+			
 		else:
 			return
