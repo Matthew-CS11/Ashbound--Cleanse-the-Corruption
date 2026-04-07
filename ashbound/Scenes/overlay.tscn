@@ -47,16 +47,33 @@ animations = [{
 
 [node name="overlay" type="CanvasLayer" unique_id=1060912410]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1554077139]
+[node name="Overlay_Root" type="Control" parent="." unique_id=1784196264]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ColorRect" type="ColorRect" parent="Overlay_Root" unique_id=557003300]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.5568628)
+
+[node name="CenterContainer" type="CenterContainer" parent="Overlay_Root" unique_id=615305187]
+layout_mode = 0
+mouse_filter = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Overlay_Root/CenterContainer" unique_id=1554077139]
 modulate = Color(1, 1, 1, 0.078431375)
 position = Vector2(574, 327.5)
 scale = Vector2(1.8031251, 1.8254846)
 sprite_frames = SubResource("SpriteFrames_mh5fl")
 autoplay = "default"
 frame_progress = 0.84089106
-
-[node name="ColorRect" type="ColorRect" parent="." unique_id=557003300]
-offset_right = 1168.0
-offset_bottom = 656.0
-mouse_filter = 2
-color = Color(0, 0, 0, 0.5568628)
