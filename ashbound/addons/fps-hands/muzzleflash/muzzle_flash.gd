@@ -1,5 +1,7 @@
 extends Node3D
 @onready var muzzle_flash: Node3D = $"."
+@onready var collision_shape_3d_2: CollisionShape3D = $Area3D/CollisionShape3D2
+@onready var collision_shape_3d: CollisionShape3D = $Area3D/CollisionShape3D
 
 var orig_x
 var orig_y

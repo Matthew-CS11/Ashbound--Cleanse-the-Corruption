@@ -82,9 +82,12 @@ func _process(delta: float) -> void:
 		if num == 3:
 			state_machinea.travel("fire")
 			$"Neck/Camera3D/fps-ak/MuzzleFlash".visible=true
+			$"Neck/Camera3D/fps-ak/MuzzleFlash/Area3D/CollisionShape3D2".disabled=false
+			$"Neck/Camera3D/fps-ak/MuzzleFlash/Area3D/CollisionShape3D".disabled=false
 	else:
 		$"Neck/Camera3D/fps-ak/MuzzleFlash".visible=false
-		
+		$"Neck/Camera3D/fps-ak/MuzzleFlash/Area3D/CollisionShape3D2".disabled=true
+		$"Neck/Camera3D/fps-ak/MuzzleFlash/Area3D/CollisionShape3D".disabled=true
 	if Input.is_action_just_pressed("left click"):
 		if num == 2:
 			if fps_c_19.can_shoot():
