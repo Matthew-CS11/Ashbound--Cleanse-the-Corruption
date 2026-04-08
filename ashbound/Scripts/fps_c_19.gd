@@ -11,6 +11,8 @@ extends Node3D
 
 @onready var camera: Camera3D = get_viewport().get_camera_3d()
 @onready var player: Player = get_tree().get_first_node_in_group("Player")
+@onready var ui: UI = $"../../../../UI"
+
 
 var current_ammo: int
 var reserve_ammo: int
@@ -19,6 +21,7 @@ var is_reloading: bool = false
 func _ready() -> void:
 	current_ammo = clamp(starting_mag_ammo, 0, mag_size)
 	reserve_ammo = clamp(starting_reserve_ammo, 0, max_reserve)
+	ui.update_ammo_label(current_ammo, reserve_ammo)
 
 
 func can_shoot() -> bool:
@@ -36,7 +39,8 @@ func shoot() -> void:
 		return
 
 	current_ammo -= 1
-	#print("Shot fired. Mag:", current_ammo, "Reserve:", reserve_ammo)
+	ui.update_ammo_label(current_ammo, reserve_ammo)
+	
 
 	var from: Vector3 = camera.global_position
 	var to: Vector3 = from + (-camera.global_transform.basis.z * range)
@@ -74,16 +78,19 @@ func shoot() -> void:
 		exclude.append(collider)
 
 func reload() -> void:
-	if is_reloading:
-		return
+	if reserve_ammo > 0:
+		if is_reloading:
+			return
 
-	if current_ammo == mag_size:
-		return
-	if reserve_ammo <= 0:
-		print("No reserve ammo!")
-		return
+		if current_ammo == mag_size:
+			return
+		if reserve_ammo <= 0:
+			print("No reserve ammo!")
+			return
 
-	is_reloading = true
+		is_reloading = true
+	else:
+		print("you broke")
 
 	# Optional: wait for reload animation
 	# await get_tree().create_timer(1.2).timeout
