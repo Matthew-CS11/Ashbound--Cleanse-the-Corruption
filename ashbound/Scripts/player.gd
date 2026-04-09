@@ -19,6 +19,7 @@ const BOB_INTENSITY = .50
 @onready var pistol_animation_tree: AnimationTree = $"Neck/Camera3D/fps-c19/AnimationTree"
 @onready var ak_animation_tree: AnimationTree = $"Neck/Camera3D/fps-ak/AnimationTree"
 @onready var animation_player: AnimationPlayer = $"Neck/Camera3D/fps-knife/AnimationPlayer"
+@onready var ui: UI = $"../UI"
 
 var head_bob_vector = Vector2.ZERO
 var head_bob_index = 0.0

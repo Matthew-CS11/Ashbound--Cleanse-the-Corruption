@@ -84,6 +84,7 @@ func reload() -> void:
 
 		if current_ammo == mag_size:
 			return
+			
 		if reserve_ammo <= 0:
 			print("No reserve ammo!")
 			return

@@ -29,6 +29,7 @@ import/blender/enabled=false
 Player=""
 Enemy=""
 damage_area=""
+ui=""
 
 [input]
 
