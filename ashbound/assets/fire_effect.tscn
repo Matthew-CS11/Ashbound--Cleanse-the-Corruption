@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://cpi8ir3wreqnl"]
+
+[ext_resource type="Texture2D" uid="uid://jlh6xdk6tmpr" path="res://assets/17-178727_download-mist-free-png-transparent-image-and-clipart.png" id="1_1ebl8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r2eop"]
+transparency = 1
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_1ebl8")
+emission_enabled = true
+emission = Color(1, 0.8117647, 0.4745098, 1)
+emission_energy_multiplier = 3.39
+billboard_mode = 1
+
+[sub_resource type="Gradient" id="Gradient_1ebl8"]
+offsets = PackedFloat32Array(0, 0.53267974, 1)
+colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_r2eop"]
+gradient = SubResource("Gradient_1ebl8")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_puixw"]
+emission_shape_scale = Vector3(0.2, 0.2, 0.2)
+emission_shape = 1
+emission_sphere_radius = 1.0
+gravity = Vector3(0, 2, 0)
+color_ramp = SubResource("GradientTexture1D_r2eop")
+
+[sub_resource type="QuadMesh" id="QuadMesh_5u3dy"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_puixw"]
+render_priority = -1
+transparency = 1
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_1ebl8")
+emission = Color(1, 0.8117647, 0.4745098, 1)
+emission_energy_multiplier = 3.39
+billboard_mode = 1
+
+[node name="FireEffect" type="Node3D" unique_id=1547685105]
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=252889840]
+material_override = SubResource("StandardMaterial3D_r2eop")
+amount = 20
+lifetime = 1.1500000000000001
+process_material = SubResource("ParticleProcessMaterial_puixw")
+draw_pass_1 = SubResource("QuadMesh_5u3dy")
+
+[node name="GPUParticles3D2" type="GPUParticles3D" parent="." unique_id=72115022]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.18537319, 0)
+material_override = SubResource("StandardMaterial3D_puixw")
+amount = 20
+lifetime = 1.8
+process_material = SubResource("ParticleProcessMaterial_puixw")
+draw_pass_1 = SubResource("QuadMesh_5u3dy")
