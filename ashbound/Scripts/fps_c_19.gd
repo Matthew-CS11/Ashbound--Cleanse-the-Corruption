@@ -37,7 +37,8 @@ func shoot() -> void:
 
 	if camera == null:
 		return
-
+	
+	await get_tree().create_timer(1.2).timeout
 	current_ammo -= 1
 	ui.update_ammo_label(current_ammo, reserve_ammo)
 	
@@ -78,11 +79,27 @@ func shoot() -> void:
 		exclude.append(collider)
 
 func reload() -> void:
+	var diff : int
+	
 	if reserve_ammo > 0:
 		if is_reloading:
-			return
-
+			if reserve_ammo > mag_size and current_ammo == 0:
+				current_ammo += mag_size
+				reserve_ammo -= mag_size
+				await get_tree().create_timer(1.2).timeout
+				ui.update_ammo_label(current_ammo, reserve_ammo)
+				is_reloading = false
+			if reserve_ammo > mag_size and current_ammo !=0:
+				diff = mag_size - current_ammo
+				reserve_ammo -= diff
+				current_ammo += diff
+				await get_tree().create_timer(1.2).timeout
+				ui.update_ammo_label(current_ammo, reserve_ammo)
+				is_reloading = false
+			
+				
 		if current_ammo == mag_size:
+			print("mag_full")
 			return
 			
 		if reserve_ammo <= 0:
@@ -90,12 +107,10 @@ func reload() -> void:
 			return
 
 		is_reloading = true
+		
 	else:
-		print("you broke")
-
-	# Optional: wait for reload animation
-	# await get_tree().create_timer(1.2).timeout
-
+		print("you broke")	
+	
 func add_reserve_ammo(amount: int) -> void:
 	reserve_ammo = clamp(reserve_ammo + amount, 0, max_reserve)
 	#print("Picked up ammo. Reserve:", reserve_ammo)
