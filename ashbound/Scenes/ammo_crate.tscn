@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://cp8wl3yyf2df5"]
+
+[ext_resource type="PackedScene" uid="uid://s5k8c8quiohy" path="res://assets/Crate.fbx" id="1_nh6qf"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_rvn11"]
+points = PackedVector3Array(-0.5000002, -1.0000006, -0.29146498, 0.49990237, -1.0000006, -0.29146498, -0.5000002, -1.0000006, 0.29931086, -0.5000002, 1.0000004, -0.29146498, 0.49990237, -1.0000006, 0.29931086, 0.49990237, 0.9998045, -0.29146498, 0.5000003, 0.9998045, 0.29931086, -0.5000002, 0.9998045, 0.29931086)
+
+[node name="ammo_crate" unique_id=399569077 instance=ExtResource("1_nh6qf")]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." index="1" unique_id=183492203]
+transform = Transform3D(1, 0, 0, 0, -1.1920929e-07, 0.99999994, 0, -0.99999994, -1.1920929e-07, 0, 0.3, 0)
+shape = SubResource("ConvexPolygonShape3D_rvn11")
