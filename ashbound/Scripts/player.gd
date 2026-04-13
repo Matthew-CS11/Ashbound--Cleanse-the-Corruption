@@ -91,10 +91,12 @@ func _process(delta: float) -> void:
 		$"Neck/Camera3D/fps-ak/MuzzleFlash/Area3D/CollisionShape3D".disabled=true
 	if Input.is_action_just_pressed("left click"):
 		if num == 2:
-			if fps_c_19.can_shoot():
-				state_machinep.travel("fire")
-				fps_c_19.shoot()
-			else: print("pistol empty")
+			if not fps_c_19.is_reloading:
+				if fps_c_19.can_shoot():
+					state_machinep.travel("fire")
+					fps_c_19.shoot()
+			else: 
+				print("pistol empty")
 	
 	if Input.is_action_pressed("right click"):
 		if num == 1:

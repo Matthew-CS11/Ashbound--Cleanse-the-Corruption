@@ -38,11 +38,9 @@ func shoot() -> void:
 	if camera == null:
 		return
 	
-	await get_tree().create_timer(1.2).timeout
 	current_ammo -= 1
 	ui.update_ammo_label(current_ammo, reserve_ammo)
 	
-
 	var from: Vector3 = camera.global_position
 	var to: Vector3 = from + (-camera.global_transform.basis.z * range)
 
@@ -83,20 +81,7 @@ func reload() -> void:
 	
 	if reserve_ammo > 0:
 		if is_reloading:
-			if reserve_ammo > mag_size and current_ammo == 0:
-				current_ammo += mag_size
-				reserve_ammo -= mag_size
-				await get_tree().create_timer(1.2).timeout
-				ui.update_ammo_label(current_ammo, reserve_ammo)
-				is_reloading = false
-			if reserve_ammo > mag_size and current_ammo !=0:
-				diff = mag_size - current_ammo
-				reserve_ammo -= diff
-				current_ammo += diff
-				await get_tree().create_timer(1.2).timeout
-				ui.update_ammo_label(current_ammo, reserve_ammo)
-				is_reloading = false
-			
+				return
 				
 		if current_ammo == mag_size:
 			print("mag_full")
@@ -108,8 +93,18 @@ func reload() -> void:
 
 		is_reloading = true
 		
-	else:
-		print("you broke")	
+		await get_tree().create_timer(1.2).timeout
+		
+		var ammo_needed: int = mag_size - current_ammo
+		var ammo_to_lead: int = min(ammo_needed, reserve_ammo)
+		
+		current_ammo += ammo_to_lead
+		reserve_ammo -= ammo_to_lead
+	
+		ui.update_ammo_label(current_ammo, reserve_ammo)
+		
+		is_reloading = false
+		
 	
 func add_reserve_ammo(amount: int) -> void:
 	reserve_ammo = clamp(reserve_ammo + amount, 0, max_reserve)
