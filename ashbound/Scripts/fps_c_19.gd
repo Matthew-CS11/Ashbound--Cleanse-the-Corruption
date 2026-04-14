@@ -108,4 +108,5 @@ func reload() -> void:
 	
 func add_reserve_ammo(amount: int) -> void:
 	reserve_ammo = clamp(reserve_ammo + amount, 0, max_reserve)
+	ui.update_ammo_label(current_ammo, reserve_ammo)
 	#print("Picked up ammo. Reserve:", reserve_ammo)

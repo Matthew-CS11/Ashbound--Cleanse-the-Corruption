@@ -9,6 +9,7 @@ const BOB_SPRINT_SPEED = 22.0
 const BOB_INTENSITY = .50
 
 @export var max_health := 50
+@export var ammo_in_pack : int = 24
 
 @onready var neck: Node3D = $Neck
 @onready var camera_3d: Camera3D = $Neck/Camera3D
@@ -28,6 +29,7 @@ var num = 1
 
 func _ready() -> void:
 	health = max_health
+	ui.get_child(0).visible = false
 	
 #func take_damage(amt: int) -> void:
 	#health -= amt
@@ -48,16 +50,19 @@ func _process(delta: float) -> void:
 			fps_knife.visible=true
 			fps_c_19.visible=false
 			fps_ak.visible=false
+			ui.get_child(0).visible = false
 		if num ==2:
 			state_machinep.travel("take")
 			fps_knife.visible=false
 			fps_c_19.visible=true
 			fps_ak.visible=false
+			ui.get_child(0).visible = true
 		if num==3:
 			state_machinea.travel("take")
 			fps_knife.visible=false
 			fps_c_19.visible=false
 			fps_ak.visible=true
+			ui.get_child(0).visible = false
 	if Input.is_action_just_pressed("MWup"):
 		num -=1
 		if num<1:
@@ -67,16 +72,19 @@ func _process(delta: float) -> void:
 			fps_knife.visible=true
 			fps_c_19.visible=false
 			fps_ak.visible=false
+			ui.get_child(0).visible = false
 		if num ==2:
 			state_machinep.travel("take")
 			fps_knife.visible=false
 			fps_c_19.visible=true
 			fps_ak.visible=false
+			ui.get_child(0).visible = true
 		if num==3:
 			state_machinea.travel("take")
 			fps_knife.visible=false
 			fps_c_19.visible=false
 			fps_ak.visible=true
+			ui.get_child(0).visible = false
 	if Input.is_action_pressed("left click"):
 		if num == 1:
 			state_machine.travel("fire")
@@ -183,3 +191,7 @@ func _physics_process(delta: float) -> void:
 
 func _on_timer_timeout() -> void:
 	pass # Replace with function body.
+
+
+func _on_ammo_pack_picked_up() -> void:
+	fps_c_19.add_reserve_ammo(ammo_in_pack)

@@ -10,6 +10,7 @@ material = SubResource("StandardMaterial3D_mrsch")
 size = Vector3(0.5, 0.5, 0.5)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gkw8x"]
+size = Vector3(2.7330933, 1.7446289, 3.4035645)
 
 [node name="ammo_pack" type="Node3D" unique_id=1385905801]
 script = ExtResource("1_xyhtp")
@@ -20,4 +21,8 @@ mesh = SubResource("BoxMesh_xyhtp")
 [node name="pick-up_area" type="Area3D" parent="." unique_id=178726154]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="pick-up_area" unique_id=1029525284]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06637573, 0.37231445, -0.20056152)
 shape = SubResource("BoxShape3D_gkw8x")
+
+[connection signal="body_entered" from="pick-up_area" to="." method="_on_pickup_area_body_entered"]
+[connection signal="body_exited" from="pick-up_area" to="." method="_on_pickup_area_body_exited"]
