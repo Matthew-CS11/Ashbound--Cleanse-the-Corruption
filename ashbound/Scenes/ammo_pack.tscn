@@ -24,5 +24,11 @@ mesh = SubResource("BoxMesh_xyhtp")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06637573, 0.37231445, -0.20056152)
 shape = SubResource("BoxShape3D_gkw8x")
 
+[node name="interact_label" type="Label3D" parent="." unique_id=1867694814]
+transform = Transform3D(1, 0, 0, 0, 0.7163018, 0.6977904, 0, -0.6977904, 0.7163018, 0, 0.35992712, 0)
+visible = false
+billboard = 1
+text = "Press \"E\" to Pick Up"
+
 [connection signal="body_entered" from="pick-up_area" to="." method="_on_pickup_area_body_entered"]
 [connection signal="body_exited" from="pick-up_area" to="." method="_on_pickup_area_body_exited"]

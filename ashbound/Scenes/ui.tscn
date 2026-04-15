@@ -7,6 +7,11 @@ font_size = 48
 outline_size = 12
 outline_color = Color(0, 0, 0, 1)
 
+[sub_resource type="LabelSettings" id="LabelSettings_jxero"]
+font_size = 48
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
 [node name="UI" type="CanvasLayer" unique_id=1066649807 groups=["ui"]]
 script = ExtResource("1_jxero")
 
@@ -30,3 +35,24 @@ alignment = 1
 layout_mode = 2
 text = "6 / 0"
 label_settings = SubResource("LabelSettings_wviqb")
+
+[node name="Level_progress" type="Control" parent="." unique_id=406838016]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Level_progress" unique_id=1609481472]
+layout_mode = 1
+offset_left = 462.0
+offset_right = 796.0
+offset_bottom = 67.0
+
+[node name="progress_label" type="Label" parent="Level_progress/HBoxContainer" unique_id=747788484]
+layout_mode = 2
+text = "Level Progress"
+label_settings = SubResource("LabelSettings_jxero")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Level_progress/HBoxContainer" unique_id=1698858400]
+layout_mode = 2
+value = 3.0
