@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://baqv6xarstqct"
+path="res://.godot/imported/Hello Juliet.mp3-4462c6255185ea54196a48ccf66ed9c0.mp3str"
+
+[deps]
+
+source_file="res://Hello Juliet.mp3"
+dest_files=["res://.godot/imported/Hello Juliet.mp3-4462c6255185ea54196a48ccf66ed9c0.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
