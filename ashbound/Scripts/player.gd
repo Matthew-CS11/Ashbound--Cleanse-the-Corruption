@@ -36,7 +36,7 @@ func _ready() -> void:
 	#if health <= 0:
 		#die()
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	var state_machine = knife_animation_tree.get("parameters/playback")
 	var state_machinep = pistol_animation_tree.get("parameters/playback")
 	var state_machinea = ak_animation_tree.get("parameters/playback")

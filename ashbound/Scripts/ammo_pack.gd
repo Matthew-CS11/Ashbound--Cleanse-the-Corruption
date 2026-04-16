@@ -7,7 +7,7 @@ signal picked_up
 
 var player_is_in_area := false
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if player_is_in_area:
 		if Input.is_action_just_pressed("interact"):
 			picked_up.emit()
@@ -21,6 +21,6 @@ func _on_pickup_area_body_entered(body: Node3D) -> void:
 		interact_label.visible = true
 
 
-func _on_pickup_area_body_exited(body: Node3D) -> void:
+func _on_pickup_area_body_exited(_body: Node3D) -> void:
 	player_is_in_area = false
 	interact_label.visible = false
