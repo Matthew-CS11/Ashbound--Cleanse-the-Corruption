@@ -1,27 +1,50 @@
 [gd_scene format=3 uid="uid://67lgvxergyxf"]
 
 [ext_resource type="PackedScene" uid="uid://cn7c6jtm8pgqg" path="res://Scenes/door.tscn" id="1_3t5sg"]
+[ext_resource type="Texture2D" uid="uid://cl8h6x370f3pg" path="res://ol6febcwjh871.png" id="1_7r34j"]
 [ext_resource type="PackedScene" uid="uid://cufa4qumgna6g" path="res://Scenes/bed_woof.tscn" id="2_4ikea"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_isvj2"]
+load_path = "res://.godot/imported/ol6febcwjh871.png-3cefd857460eb26d87ec035e756e3d89.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uu0ng"]
+albedo_texture = SubResource("CompressedTexture2D_isvj2")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_gn78r"]
+load_path = "res://.godot/imported/ol6febcwjh871.png-3cefd857460eb26d87ec035e756e3d89.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jwkej"]
+albedo_texture = SubResource("CompressedTexture2D_gn78r")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vxiu1"]
+albedo_texture = ExtResource("1_7r34j")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xf8eb"]
+albedo_texture = ExtResource("1_7r34j")
 
 [node name="room1" type="Node3D" unique_id=773949795]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1881937923]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.136793, 0, 8.651652)
+material_override = SubResource("StandardMaterial3D_uu0ng")
 use_collision = true
 size = Vector3(7.781066, 5.8201904, 1.0096904)
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="." unique_id=2049100042]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.3626423, 0, 8.628542)
+material_override = SubResource("StandardMaterial3D_jwkej")
 use_collision = true
 size = Vector3(7.1592994, 5.8201904, 1.0096904)
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="." unique_id=1697960708]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 8.571983, 0, -0.07516861)
+material_override = SubResource("StandardMaterial3D_vxiu1")
 use_collision = true
 size = Vector3(18.331533, 5.8201904, 1.0096904)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=855686173]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.61435413, 0, -9.756599)
+material_override = SubResource("StandardMaterial3D_xf8eb")
 use_collision = true
 size = Vector3(19.313782, 5.8201904, 1.0096904)
 
