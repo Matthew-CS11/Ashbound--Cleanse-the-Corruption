@@ -30,6 +30,7 @@ Player=""
 Enemy=""
 damage_area=""
 ui=""
+spawn_points=""
 
 [input]
 
