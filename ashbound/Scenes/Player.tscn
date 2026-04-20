@@ -1462,9 +1462,9 @@ bones/3/parent = 2
 bones/3/rest = Transform3D(0.16507405, 0.8424459, 0.5128698, -0.39492112, 0.53295565, -0.7483285, -0.9037631, -0.07901353, 0.4206769, -6.217249e-15, 1.4210855e-14, -31.832315)
 bones/3/enabled = true
 bones/3/position = Vector3(-6.217249e-15, 1.4210855e-14, -31.832315)
-<<<<<<< Updated upstream
+
 bones/3/rotation = Quaternion(0.23566623, 0.47508284, -0.41349834, 0.7401196)
-=======
+
 bones/3/rotation = Quaternion(0.23808317, 0.47548756, -0.41028777, 0.74087256)
 >>>>>>> Stashed changes
 bones/3/scale = Vector3(1, 1, 1)
