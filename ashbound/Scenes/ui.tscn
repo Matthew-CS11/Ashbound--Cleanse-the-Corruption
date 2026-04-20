@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://dxplm52vtwspf"]
 
 [ext_resource type="Script" uid="uid://1uryilgpawuy" path="res://Scripts/ui.gd" id="1_jxero"]
-[ext_resource type="Texture2D" uid="uid://dt2u18odvnhjh" path="res://assets/bar_square_gloss_large.png" id="2_qdvrb"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_wviqb"]
 font_size = 48
@@ -45,8 +44,8 @@ offset_bottom = 40.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Level_progress" unique_id=1609481472]
 layout_mode = 1
-offset_left = 417.0
-offset_right = 756.0
+offset_left = 462.0
+offset_right = 796.0
 offset_bottom = 67.0
 
 [node name="progress_label" type="Label" parent="Level_progress/HBoxContainer" unique_id=747788484]
@@ -54,10 +53,6 @@ layout_mode = 2
 text = "Level Progress"
 label_settings = SubResource("LabelSettings_jxero")
 
-[node name="TextureProgressBar" type="TextureProgressBar" parent="Level_progress" unique_id=1698858400]
-layout_mode = 0
-offset_left = 489.0
-offset_top = 74.0
-offset_right = 681.0
-offset_bottom = 141.0
-texture_progress = ExtResource("2_qdvrb")
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Level_progress/HBoxContainer" unique_id=1698858400]
+layout_mode = 2
+value = 3.0
