@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://cllk4wl4qkqe3"]
 
 [ext_resource type="PackedScene" uid="uid://5b63nxdi5bsm" path="res://Scenes/Player.tscn" id="1_lx58d"]
-[ext_resource type="Texture2D" uid="uid://cl8h6x370f3pg" path="res://ol6febcwjh871.png" id="2_01wij"]
 [ext_resource type="PackedScene" uid="uid://cn7c6jtm8pgqg" path="res://Scenes/door.tscn" id="2_3vfaj"]
 [ext_resource type="PackedScene" uid="uid://67lgvxergyxf" path="res://Scenes/room_1.tscn" id="3_s5hq5"]
 [ext_resource type="PackedScene" uid="uid://dtckxk565p5sg" path="res://Scenes/enemy.tscn" id="4_3vfaj"]
@@ -35,14 +34,14 @@ glow_enabled = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q6ha6"]
 albedo_color = Color(0.22959325, 0.22959325, 0.22959322, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_axfqn"]
-albedo_texture = ExtResource("2_01wij")
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4xls1"]
 albedo_color = Color(1, 0.7836168, 0.49156135, 0.42745098)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ifr3g"]
 albedo_color = Color(0.5, 0.275, 0, 0.7529412)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g4h3g"]
+albedo_texture = ExtResource("5_s5hq5")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hakmb"]
 albedo_texture = ExtResource("5_s5hq5")
@@ -77,6 +76,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.96347, 26.28872, 225.74286)
 use_collision = true
 size = Vector3(277.29303, 59.576477, 16.657959)
 
+[node name="Front_wall2" type="CSGBox3D" parent="Hospital building/Main_walls" unique_id=2130034534]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 3.8151855, 5.120758, 164.77751)
+use_collision = true
+size = Vector3(277.29303, 113.839516, 0.001)
+
 [node name="Back_wall" type="CSGBox3D" parent="Hospital building/Main_walls" unique_id=739944002]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.376366, 26.28, -59.476772)
 use_collision = true
@@ -91,12 +95,6 @@ size = Vector3(277.29303, 59.576477, 16.657959)
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 138.94852, 26.28872, 80.36191)
 use_collision = true
 size = Vector3(277.29303, 59.576477, 16.657959)
-
-[node name="Roof" type="CSGBox3D" parent="Hospital building/Main_walls" unique_id=821180363]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 10.404022, 86.95054, 80.361916)
-material_override = SubResource("StandardMaterial3D_axfqn")
-use_collision = true
-size = Vector3(277.29303, 59.576477, 273.74695)
 
 [node name="Front_interior" type="Node3D" parent="Hospital building" unique_id=576852256]
 
@@ -301,26 +299,31 @@ material = SubResource("StandardMaterial3D_ifr3g")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Hospital building/Boss_Room" unique_id=1572560375]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.024292, 7.385811, 119.427124)
+material_override = SubResource("StandardMaterial3D_g4h3g")
 use_collision = true
 size = Vector3(19.547607, 16.901855, 3.750122)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="Hospital building/Boss_Room" unique_id=666540161]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.965176, 7.385811, 119.427124)
+material_override = SubResource("StandardMaterial3D_g4h3g")
 use_collision = true
 size = Vector3(19.547607, 16.901855, 3.750122)
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="Hospital building/Boss_Room" unique_id=1949020586]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 31.836823, 7.385811, 88.585976)
+material_override = SubResource("StandardMaterial3D_g4h3g")
 use_collision = true
 size = Vector3(58.141296, 16.901855, 3.750122)
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="Hospital building/Boss_Room" unique_id=295930775]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -14.864816, 7.385811, 89.358086)
+material_override = SubResource("StandardMaterial3D_g4h3g")
 use_collision = true
 size = Vector3(56.597076, 16.901855, 3.750122)
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="Hospital building/Boss_Room" unique_id=1254660816]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.679428, 7.385811, 69.51542)
+material_override = SubResource("StandardMaterial3D_g4h3g")
 use_collision = true
 size = Vector3(51.466644, 16.901855, 3.750122)
 
