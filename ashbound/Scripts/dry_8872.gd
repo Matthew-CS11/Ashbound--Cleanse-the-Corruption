@@ -10,8 +10,7 @@ func _process(delta: float) -> void:
 		$Dry8873LOD.transparency+=0.02
 		$Dry8873LOD011.transparency+=0.02
 		$Dry8873LOD012.transparency+=0.02
-	if $Dry8873LOD012.transparency==1:
-		get_parent().queue_free()
+
 	
 
 
