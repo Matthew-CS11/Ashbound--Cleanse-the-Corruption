@@ -48,6 +48,92 @@ albedo_texture = ExtResource("5_s5hq5")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_axfqn"]
 
+[sub_resource type="Animation" id="Animation_g4h3g"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("mold22:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.99999994, 1.0000001, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("mold23:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.99999994, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("mold21:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 0.99999994)]
+}
+
+[sub_resource type="Animation" id="Animation_xje3q"]
+resource_name = "new_animation"
+length = 0.7
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("mold22:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.99999994, 1.0000001, 1), Vector3(1.1, 1.1, 1.1), Vector3(1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("mold23:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.43333334),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.99999994, 1, 1), Vector3(1.1, 1.1, 1.1), Vector3(1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("mold21:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.46666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 0.99999994), Vector3(1.1, 1.1, 1.1), Vector3(1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ifr3g"]
+_data = {
+&"RESET": SubResource("Animation_g4h3g"),
+&"new_animation": SubResource("Animation_xje3q")
+}
+
 [node name="Hospital" type="NavigationRegion3D" unique_id=813909543]
 navigation_mesh = SubResource("NavigationMesh_mj0lg")
 
@@ -464,6 +550,19 @@ transform = Transform3D(0.6856405, 0, -0.7279403, 0, 1, 0, 0.7279403, 0, 0.68564
 stream = ExtResource("13_g4h3g")
 volume_db = 21.105
 autoplay = true
+
+[node name="mold21" parent="." unique_id=824832928 instance=ExtResource("7_6gwy8")]
+transform = Transform3D(0.9837279, 0.08393354, 0.15885414, -0.080206744, 0.9963345, -0.029739661, -0.16076805, 0.016514558, 0.98685396, 8.253668, -0.73585224, 79.34235)
+
+[node name="mold23" parent="." unique_id=1051564867 instance=ExtResource("7_6gwy8")]
+transform = Transform3D(-0.97472125, -0.1598312, -0.15611681, 0.15515184, -0.98700625, 0.041792855, -0.16076805, 0.01651457, 0.9868541, 15.816954, 29.617565, 79.34235)
+
+[node name="mold22" parent="." unique_id=1651185975 instance=ExtResource("7_6gwy8")]
+transform = Transform3D(-0.98020583, 0.11437769, -0.16159904, -0.11554279, -0.99330014, -0.0022006142, -0.16076803, 0.016514553, 0.9868541, 0.7926626, 29.617565, 79.34235)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=47461155]
+libraries/ = SubResource("AnimationLibrary_ifr3g")
+autoplay = &"new_animation"
 
 [connection signal="body_entered" from="Hospital building/Boss_Room/Enemy_Spawnpoints/boss_area" to="Hospital building/Boss_Room/Enemy_Spawnpoints" method="_on_boss_area_body_entered"]
 [connection signal="picked_up" from="ammo_pack" to="player" method="_on_ammo_pack_picked_up"]
