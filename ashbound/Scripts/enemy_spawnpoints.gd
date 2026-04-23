@@ -4,10 +4,15 @@ extends Node3D
 
 var spawn_points: Array[Node] = []
 
+func _ready() -> void:
+	for child in get_children():
+		if child is Marker3D and child.is_in_group("spawn_points"):
+			spawn_points.append(child)
+
 func spawn_enemy(spawn_point : Marker3D) -> void:
 	var enemy_instance = enemy_scene.instantiate()
-	get_tree().current_scene.add_child.call_deferred(enemy_instance)
-	enemy_instance.set_deferred("global_transform", spawn_point.global_transform)
+	get_tree().current_scene.add_child(enemy_instance)
+	enemy_instance.global_transform = spawn_point.global_transform
 	
 func spawn_all() -> void:
 	for spawn_point in spawn_points:
