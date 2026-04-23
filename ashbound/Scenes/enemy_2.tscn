@@ -1,12 +1,6 @@
-<<<<<<< Updated upstream
 [gd_scene format=3 uid="uid://cha4h7t4sj7a2"]
 
 [ext_resource type="Script" path="res://Scripts/enemy_2.gd" id="1_t3d2o"]
-=======
-[gd_scene format=3 uid="uid://dm6fqe5ide7fr"]
-
-[ext_resource type="Script" uid="uid://c32k8sc334c62" path="res://Scripts/enemy_2.gd" id="1_t3d2o"]
->>>>>>> Stashed changes
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_t3d2o"]
 
