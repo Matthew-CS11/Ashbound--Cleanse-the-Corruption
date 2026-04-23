@@ -1,6 +1,7 @@
 extends Node3D
 
 @export var enemy_scene : PackedScene
+@onready var spawn_timer: Timer = $SpawnTimer
 
 var spawn_points: Array[Node] = []
 
@@ -19,8 +20,10 @@ func spawn_all() -> void:
 		print('super duper goth mommy')
 		spawn_enemy(spawn_point)
 
-
 func _on_boss_area_body_entered(body: Node3D) -> void:
 	if body is Player:
 		print("super goth mommy")
-		spawn_all()
+		spawn_timer.start()
+
+func _on_spawn_timer_timeout() -> void:
+	spawn_all()
