@@ -554,12 +554,24 @@ autoplay = true
 
 [node name="mold21" parent="." unique_id=824832928 instance=ExtResource("7_6gwy8")]
 transform = Transform3D(0.9837279, 0.08393354, 0.15885414, -0.080206744, 0.9963345, -0.029739663, -0.16076805, 0.01651456, 0.98685396, 8.253668, -0.73585224, 79.34235)
+<<<<<<< Updated upstream
 
 [node name="mold23" parent="." unique_id=1051564867 instance=ExtResource("7_6gwy8")]
 transform = Transform3D(-0.97472125, -0.1598312, -0.1561168, 0.15515184, -0.98700625, 0.04179285, -0.16076803, 0.01651457, 0.9868541, 15.816954, 29.617565, 79.34235)
 
 [node name="mold22" parent="." unique_id=1651185975 instance=ExtResource("7_6gwy8")]
 transform = Transform3D(-0.98020583, 0.11437769, -0.16159904, -0.11554279, -0.99330014, -0.0022006177, -0.16076803, 0.016514549, 0.9868541, 0.7926626, 29.617565, 79.34235)
+=======
+script = null
+
+[node name="mold23" parent="." unique_id=1051564867 instance=ExtResource("7_6gwy8")]
+transform = Transform3D(-0.97472125, -0.1598312, -0.1561168, 0.15515184, -0.98700625, 0.04179285, -0.16076803, 0.01651457, 0.9868541, 15.816954, 29.617565, 79.34235)
+script = null
+
+[node name="mold22" parent="." unique_id=1651185975 instance=ExtResource("7_6gwy8")]
+transform = Transform3D(-0.98020583, 0.11437769, -0.16159904, -0.11554279, -0.99330014, -0.0022006177, -0.16076803, 0.016514549, 0.9868541, 0.7926626, 29.617565, 79.34235)
+script = null
+>>>>>>> Stashed changes
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=47461155]
 libraries/ = SubResource("AnimationLibrary_ifr3g")
