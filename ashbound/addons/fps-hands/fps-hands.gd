@@ -69,17 +69,12 @@ var MeleeRayCast : RayCast3D
 
 var bulletholeScene : PackedScene = preload("decals/bullethole/bullethole.tscn")
 var scratchScene : PackedScene = preload("decals/scratch/scratch.tscn")
-var muzzleFlashScene : PackedScene = preload("muzzleflash/MuzzleFlash.tscn")
-var muzzleSmokeScene : PackedScene = preload("muzzlesmoke/MuzzleSmoke.tscn")
 var bulletScene : PackedScene = preload("res://addons/fps-hands/bullet/bullet.tscn")
 
 var weapons : Array[PackedScene] = [
 	preload("fps-knife/fps-knife.tscn"),
 	preload("fps-c19/fps-c19.tscn"),
-	preload("fps-smg45/fps-smg45.tscn"),
 	preload("fps-ak/fps-ak.tscn"),
-	preload("fps-lmg63/fps-lmg63.tscn"),
-	preload("fps-sawnoff/fps-sawnoff.tscn"),
 ]
 var weapon_index : int # current weapon index
 var weapon_change : int # weapon to take after hide weapon
@@ -268,17 +263,6 @@ func fire_bullet_calculate(raycast:RayCast3D, damage:float) -> void:
 		fire_single(raycast, spread_deg, mult, damage)
 #endregion
 
-func muzzle_flash():
-	if muzzlePoint:
-		var muzzleFlash : Node3D = muzzleFlashScene.instantiate()
-		muzzleFlash.scale /= weapon.scale
-		muzzlePoint.add_child(muzzleFlash)
-
-func muzzle_smoke():
-	if muzzlePoint and show_muzzle_smoke:
-		var muzzleSmoke : Node3D = muzzleSmokeScene.instantiate()
-		muzzleSmoke.scale /= weapon.scale
-		muzzlePoint.add_child(muzzleSmoke)
 
 func add_recoil():
 	if recoil and weapon.get_meta("recoil_x",0)+weapon.get_meta("recoil_y",0)>0:
@@ -467,8 +451,6 @@ func _on_animation_tree_animation_started(anim_name: StringName) -> void:
 			melee_attack(FireRayCast, weapon.get_meta("damage"))
 		else:
 			fire_bullet_calculate(FireRayCast, weapon.get_meta("damage"))
-		muzzle_flash()
-		muzzle_smoke()
 		add_recoil()
 		add_camera_shake(shake_strength)
 	if anim_name == "melee":
