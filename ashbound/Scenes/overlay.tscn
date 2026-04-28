@@ -71,7 +71,7 @@ layout_mode = 0
 mouse_filter = 2
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Overlay_Root/CenterContainer" unique_id=1554077139]
-modulate = Color(1, 1, 1, 0.078431375)
+modulate = Color(1, 1, 1, 0.011764706)
 position = Vector2(574, 327.5)
 scale = Vector2(1.8031251, 1.8254846)
 sprite_frames = SubResource("SpriteFrames_mh5fl")
