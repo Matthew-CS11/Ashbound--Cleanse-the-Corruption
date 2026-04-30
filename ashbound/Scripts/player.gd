@@ -40,7 +40,27 @@ func _process(_delta: float) -> void:
 	var state_machine = knife_animation_tree.get("parameters/playback")
 	var state_machinep = pistol_animation_tree.get("parameters/playback")
 	var state_machinea = ak_animation_tree.get("parameters/playback")
-	
+	if Input.is_action_just_pressed("AK"):
+		num = 3
+		state_machinea.travel("take")
+		fps_knife.visible=false
+		fps_c_19.visible=false
+		fps_ak.visible=true
+		ui.get_child(0).visible = false
+	if Input.is_action_just_pressed("KNIFE"):
+		num = 1
+		state_machine.travel("take")
+		fps_knife.visible=true
+		fps_c_19.visible=false
+		fps_ak.visible=false
+		ui.get_child(0).visible = false
+	if Input.is_action_just_pressed("PISTOL"):
+		num = 2
+		state_machinep.travel("take")
+		fps_knife.visible=false
+		fps_c_19.visible=true
+		fps_ak.visible=false
+		ui.get_child(0).visible = true
 	if Input.is_action_just_pressed("MWdown"):
 		num +=1
 		if num>3:
@@ -135,9 +155,9 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
-	# Handle jump.
-	#if Input.is_action_just_pressed("jump") and is_on_floor():
-		#velocity.y = JUMP_VELOCITY
+	 #Handle jump.
+	if Input.is_action_just_pressed("Jump") and is_on_floor():
+		velocity.y = JUMP_VELOCITY
 	
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -159,12 +179,12 @@ func _physics_process(delta: float) -> void:
 		camera_3d.position.x = lerp(camera_3d.position.x, camera_3d.position.x + new_x, 0.1)
 		
 		#checking for sprint
-		#if Input.is_action_pressed("sprint"):
-			#velocity.z *= SPRINT_VELOCITY
-			#velocity.x *= SPRINT_VELOCITY
-			##headbob
-			#camera_3d.position.y = lerp(camera_3d.position.y, camera_3d.position.y + new_y, 0.1)
-			#bob_speed = BOB_SPRINT_SPEED
+		if Input.is_action_pressed("SPRINT"):
+			velocity.z *= SPRINT_VELOCITY
+			velocity.x *= SPRINT_VELOCITY
+			#headbob
+			camera_3d.position.y = lerp(camera_3d.position.y, camera_3d.position.y + new_y, 0.1)
+			bob_speed = BOB_SPRINT_SPEED
 			
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)

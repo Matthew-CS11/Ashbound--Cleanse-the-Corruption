@@ -1,6 +1,7 @@
 extends CharacterBody3D
 
 @export var max_health := 50
+@export var SPEED := 12
 
 @onready var navigation_agent_3d: NavigationAgent3D = $NavigationAgent3D
 @onready var player: Player = $"../player"
@@ -27,6 +28,6 @@ func _physics_process(_delta: float) -> void:
 	var destination = navigation_agent_3d.get_next_path_position()
 	var direction = (destination - global_position).normalized()
 	
-	velocity = direction * 5.0
+	velocity = direction * SPEED
 	
 	move_and_slide()

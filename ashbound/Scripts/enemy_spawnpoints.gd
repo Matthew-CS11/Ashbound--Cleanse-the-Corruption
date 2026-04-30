@@ -1,7 +1,7 @@
 extends Node3D
 
 @export var enemy_scene : PackedScene
-@export var spawn_delay := 15.0
+@export var spawn_delay := 5.0
 @export var max_alive_enemies := 4
 
 var spawn_points: Array[Node] = []
