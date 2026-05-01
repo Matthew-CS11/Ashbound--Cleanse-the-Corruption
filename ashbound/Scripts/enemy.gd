@@ -5,7 +5,7 @@ class_name Enemy
 @export var SPEED := 10
 
 @onready var navigation_agent_3d: NavigationAgent3D = $NavigationAgent3D
-@onready var player: Player = $"../player"
+@onready var player: Player = $"../../player"
 
 var agro := false
 var health : int
