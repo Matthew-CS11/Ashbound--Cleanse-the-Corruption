@@ -21,12 +21,11 @@ const BOB_INTENSITY = .50
 @onready var ak_animation_tree: AnimationTree = $"Neck/Camera3D/fps-ak/AnimationTree"
 @onready var animation_player: AnimationPlayer = $"Neck/Camera3D/fps-knife/AnimationPlayer"
 @onready var ui: UI = $"../UI"
-
+var bruh = true
 var head_bob_vector = Vector2.ZERO
 var head_bob_index = 0.0
 var health : int
 var num = 1
-
 func _ready() -> void:
 	health = max_health
 	ui.get_child(0).visible = false
@@ -151,48 +150,49 @@ func _unhandled_input(event: InputEvent) -> void:
 			camera_3d.rotation.x = clamp(camera_3d.rotation.x, deg_to_rad(-30), deg_to_rad(60))
 
 func _physics_process(delta: float) -> void:
-	# Add the gravity.
-	if not is_on_floor():
-		velocity += get_gravity() * delta
+	if bruh == true:
+		# Add the gravity.
+		if not is_on_floor():
+			velocity += get_gravity() * delta
 
-	 #Handle jump.
-	if Input.is_action_just_pressed("Jump") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
-	
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var input_dir := Input.get_vector("left", "right", "forward", "backward")
-	var direction = (neck.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	var velocity_clamped = clamp(velocity.length(), 0.5, SPRINT_VELOCITY * 2)
-	var bob_speed = BOB_WALK_SPEED
+		 #Handle jump.
+		if Input.is_action_just_pressed("Jump") and is_on_floor():
+			velocity.y = JUMP_VELOCITY
+		
+		# Get the input direction and handle the movement/deceleration.
+		# As good practice, you should replace UI actions with custom gameplay actions.
+		var input_dir := Input.get_vector("left", "right", "forward", "backward")
+		var direction = (neck.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+		var velocity_clamped = clamp(velocity.length(), 0.5, SPRINT_VELOCITY * 2)
+		var bob_speed = BOB_WALK_SPEED
 
-	head_bob_index += bob_speed * delta
-	
-	var new_y = sin(head_bob_index) * BOB_INTENSITY
-	var new_x = cos(head_bob_index * 0.5) * BOB_INTENSITY
+		head_bob_index += bob_speed * delta
 		
-		
-	if direction:
-		velocity.x = direction.x * SPEED
-		velocity.z = direction.z * SPEED
-		camera_3d.position.y = lerp(camera_3d.position.y, camera_3d.position.y + new_y, 0.1)
-		camera_3d.position.x = lerp(camera_3d.position.x, camera_3d.position.x + new_x, 0.1)
-		
-		#checking for sprint
-		if Input.is_action_pressed("SPRINT"):
-			velocity.z *= SPRINT_VELOCITY
-			velocity.x *= SPRINT_VELOCITY
-			#headbob
-			camera_3d.position.y = lerp(camera_3d.position.y, camera_3d.position.y + new_y, 0.1)
-			bob_speed = BOB_SPRINT_SPEED
+		var new_y = sin(head_bob_index) * BOB_INTENSITY
+		var new_x = cos(head_bob_index * 0.5) * BOB_INTENSITY
 			
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		velocity.z = move_toward(velocity.z, 0, SPEED)
-		camera_3d.position.y = lerp(camera_3d.position.y, 0.0, 0.1)
-		camera_3d.position.x = lerp(camera_3d.position.x, 0.0, 0.1)
+			
+		if direction:
+			velocity.x = direction.x * SPEED
+			velocity.z = direction.z * SPEED
+			camera_3d.position.y = lerp(camera_3d.position.y, camera_3d.position.y + new_y, 0.1)
+			camera_3d.position.x = lerp(camera_3d.position.x, camera_3d.position.x + new_x, 0.1)
+			
+			#checking for sprint
+			if Input.is_action_pressed("SPRINT"):
+				velocity.z *= SPRINT_VELOCITY
+				velocity.x *= SPRINT_VELOCITY
+				#headbob
+				camera_3d.position.y = lerp(camera_3d.position.y, camera_3d.position.y + new_y, 0.1)
+				bob_speed = BOB_SPRINT_SPEED
+				
+		else:
+			velocity.x = move_toward(velocity.x, 0, SPEED)
+			velocity.z = move_toward(velocity.z, 0, SPEED)
+			camera_3d.position.y = lerp(camera_3d.position.y, 0.0, 0.1)
+			camera_3d.position.x = lerp(camera_3d.position.x, 0.0, 0.1)
 
-	move_and_slide()
+		move_and_slide()
 
 #func die():
 	#if lose_screen:
@@ -215,3 +215,24 @@ func _on_timer_timeout() -> void:
 
 func _on_ammo_pack_picked_up() -> void:
 	fps_c_19.add_reserve_ammo(ammo_in_pack)
+
+
+func _on_node_3d_boii() -> void:
+	var state_machinep = pistol_animation_tree.get("parameters/playback")
+	var state_machinea = ak_animation_tree.get("parameters/playback")
+	state_machinep.travel("take")
+	fps_knife.visible=false
+	fps_c_19.visible=true
+	fps_ak.visible=false
+
+func _on_node_3d_boii_2() -> void:
+	var state_machinep = pistol_animation_tree.get("parameters/playback")
+	var state_machinea = ak_animation_tree.get("parameters/playback")
+	state_machinea.travel("take")
+	fps_knife.visible=false
+	fps_c_19.visible=false
+	fps_ak.visible=true
+
+
+func _on_node_3d_boii_3() -> void:
+	bruh = false
