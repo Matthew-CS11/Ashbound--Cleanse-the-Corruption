@@ -15,7 +15,7 @@ func _ready() -> void:
 	boii2.emit()
 	label.text = "this is your flamethrower. do not use these on the 
 	mold meisters, it will only make them stronger."
-	await get_tree().create_timer(4).timeout
+	await get_tree().create_timer(5.5).timeout
 	$Enemy.visible=false
 	$mold.visible=true
 	label.text = "use the flamethrower to destroy and burn these viny growths
