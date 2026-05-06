@@ -8,8 +8,9 @@ const BOB_WALK_SPEED = 14.0
 const BOB_SPRINT_SPEED = 22.0
 const BOB_INTENSITY = .50
 
-@export var max_health := 50
+@export var max_health := 100
 @export var ammo_in_pack : int = 24
+@export var damage_taken := 10
 
 @onready var neck: Node3D = $Neck
 @onready var camera_3d: Camera3D = $Neck/Camera3D
@@ -21,19 +22,24 @@ const BOB_INTENSITY = .50
 @onready var ak_animation_tree: AnimationTree = $"Neck/Camera3D/fps-ak/AnimationTree"
 @onready var animation_player: AnimationPlayer = $"Neck/Camera3D/fps-knife/AnimationPlayer"
 @onready var ui: UI = $"../UI"
+
 var bruh = true
 var head_bob_vector = Vector2.ZERO
 var head_bob_index = 0.0
 var health : int
 var num = 1
+
 func _ready() -> void:
 	health = max_health
 	ui.get_child(0).visible = false
 	
-#func take_damage(amt: int) -> void:
-	#health -= amt
-	#if health <= 0:
-		#die()
+func take_damage(amt: int) -> void:
+	health -= amt
+	ui.update_health_label(health)
+	print("done")
+	print(health)
+	if health <= 0:
+		die()
 
 func _process(_delta: float) -> void:
 	var state_machine = knife_animation_tree.get("parameters/playback")
@@ -194,19 +200,10 @@ func _physics_process(delta: float) -> void:
 
 		move_and_slide()
 
-#func die():
-	#if lose_screen:
-		#lose_screen.visible = true
-		#lose_screen.process_mode = Node.PROCESS_MODE_WHEN_PAUSED
-		#get_tree().paused = true
-		#Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-		#if cross:
-			#cross.visible = false
-		#if ui:
-			#ui.visible = false
-	#else:
-		#get_tree().change_scene_to_file("res://lose_screen.tscn")
-	
+func die():
+		get_tree().paused = true
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+
 
 
 func _on_timer_timeout() -> void:
@@ -236,3 +233,9 @@ func _on_node_3d_boii_2() -> void:
 
 func _on_node_3d_boii_3() -> void:
 	bruh = false
+
+
+func _on_hurt_box_body_entered(body: Node3D) -> void:
+	if body.is_in_group("Enemy"):
+		print("oww")
+		take_damage(damage_taken)

@@ -12,6 +12,11 @@ font_size = 48
 outline_size = 10
 outline_color = Color(0, 0, 0, 1)
 
+[sub_resource type="LabelSettings" id="LabelSettings_qdvrb"]
+font_size = 48
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
 [node name="UI" type="CanvasLayer" unique_id=1066649807 groups=["ui"]]
 script = ExtResource("1_jxero")
 
@@ -57,3 +62,21 @@ label_settings = SubResource("LabelSettings_jxero")
 [node name="TextureProgressBar" type="TextureProgressBar" parent="Level_progress/HBoxContainer" unique_id=1698858400]
 layout_mode = 2
 value = 3.0
+
+[node name="Health_HUD" type="Control" parent="." unique_id=1357791998]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Health_HUD" unique_id=926185490]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 580.0
+offset_right = 126.0
+offset_bottom = 647.0
+
+[node name="Health_label" type="Label" parent="Health_HUD/HBoxContainer" unique_id=1498673250]
+layout_mode = 2
+text = "100"
+label_settings = SubResource("LabelSettings_qdvrb")
