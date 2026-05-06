@@ -14,6 +14,8 @@ extends Node3D
 @onready var ui: UI = $"../../../../UI"
 
 
+
+
 var current_ammo: int
 var reserve_ammo: int
 var is_reloading: bool = false
