@@ -22,7 +22,12 @@ const BOB_INTENSITY = .50
 @onready var ak_animation_tree: AnimationTree = $"Neck/Camera3D/fps-ak/AnimationTree"
 @onready var animation_player: AnimationPlayer = $"Neck/Camera3D/fps-knife/AnimationPlayer"
 @onready var ui: UI = $"../UI"
-@onready var death_screen: Control = $"../Death_screen"
+@onready var death_screen: Control = $"../UI/Death_screen"
+@onready var overlay: CanvasLayer = $"../overlay"
+@onready var ammo_hud: Control = $"../UI/Ammo_HUD"
+@onready var level_progress: Control = $"../UI/Level_progress"
+@onready var health_hud: Control = $"../UI/Health_HUD"
+@onready var text_bar: ColorRect = $"../UI/Text_bar"
 
 var bruh = true
 var head_bob_vector = Vector2.ZERO
@@ -205,7 +210,11 @@ func die():
 		get_tree().paused = true
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		death_screen.visible = true
-		ui.visible = false
+		ammo_hud.visible = false
+		level_progress.visible = false
+		health_hud.visible = false
+		text_bar.visible = false
+		overlay.visible = false
 
 
 func _on_timer_timeout() -> void:

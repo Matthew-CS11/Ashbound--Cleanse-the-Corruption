@@ -14,4 +14,5 @@ func _ready() -> void:
 	$AudioStreamPlayer.volume_db = 6
 
 func _on_retry_button_pressed() -> void:
+	print("im pressed")
 	get_tree().reload_current_scene()
