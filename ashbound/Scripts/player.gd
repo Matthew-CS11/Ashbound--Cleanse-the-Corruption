@@ -22,6 +22,7 @@ const BOB_INTENSITY = .50
 @onready var ak_animation_tree: AnimationTree = $"Neck/Camera3D/fps-ak/AnimationTree"
 @onready var animation_player: AnimationPlayer = $"Neck/Camera3D/fps-knife/AnimationPlayer"
 @onready var ui: UI = $"../UI"
+@onready var death_screen: Control = $"../Death_screen"
 
 var bruh = true
 var head_bob_vector = Vector2.ZERO
@@ -203,7 +204,8 @@ func _physics_process(delta: float) -> void:
 func die():
 		get_tree().paused = true
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-
+		death_screen.visible = true
+		ui.visible = false
 
 
 func _on_timer_timeout() -> void:

@@ -12,3 +12,6 @@ func _ready() -> void:
 	$UI/Text_bar.visible=false
 	$UI/Text_bar/Label.visible=false
 	$AudioStreamPlayer.volume_db = 6
+
+func _on_retry_button_pressed() -> void:
+	get_tree().reload_current_scene()
