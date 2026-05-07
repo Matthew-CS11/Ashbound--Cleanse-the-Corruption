@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://uyn1h2wjcvj5"]
 
+[ext_resource type="Script" uid="uid://vdnweuinen4m" path="res://Scripts/death_screen.gd" id="1_8hps1"]
+
 [sub_resource type="LabelSettings" id="LabelSettings_rc6v1"]
 font_size = 82
 font_color = Color(1, 0, 0, 1)
@@ -13,6 +15,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_8hps1")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=79142033]
 layout_mode = 1

@@ -207,14 +207,15 @@ func _physics_process(delta: float) -> void:
 		move_and_slide()
 
 func die():
-		get_tree().paused = true
+		#get_tree().paused = true
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-		death_screen.visible = true
+		get_tree().change_scene_to_file("res://Scenes/death_screen.tscn")
 		ammo_hud.visible = false
 		level_progress.visible = false
 		health_hud.visible = false
 		text_bar.visible = false
 		overlay.visible = false
+		
 
 
 func _on_timer_timeout() -> void:
