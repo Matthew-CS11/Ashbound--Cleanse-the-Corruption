@@ -17,6 +17,7 @@ func _ready() -> void:
 	
 func take_damage(amt: int) -> void:
 	health -= amt
+	agro = true
 	if health <= 0:
 		killed.emit()
 		queue_free()
