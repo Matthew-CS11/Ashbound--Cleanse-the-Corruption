@@ -22,7 +22,6 @@ const BOB_INTENSITY = .50
 @onready var ak_animation_tree: AnimationTree = $"Neck/Camera3D/fps-ak/AnimationTree"
 @onready var animation_player: AnimationPlayer = $"Neck/Camera3D/fps-knife/AnimationPlayer"
 @onready var ui: UI = $"../UI"
-@onready var death_screen: Control = $"../UI/Death_screen"
 @onready var overlay: CanvasLayer = $"../overlay"
 @onready var ammo_hud: Control = $"../UI/Ammo_HUD"
 @onready var level_progress: Control = $"../UI/Level_progress"
