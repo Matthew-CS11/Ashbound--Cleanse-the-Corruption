@@ -6,6 +6,7 @@ class_name Enemy
 
 @onready var navigation_agent_3d: NavigationAgent3D = $NavigationAgent3D
 @onready var player: Player = $"../../player"
+@onready var animation_player: AnimationPlayer = $mold_monster/AnimationPlayer
 
 var agro := false
 var health : int
@@ -25,6 +26,7 @@ func take_damage(amt: int) -> void:
 func _process(_delta: float) -> void:
 	if agro:
 		navigation_agent_3d.set_target_position(player.global_position)
+		animation_player.play("mixamo_com")
 		look_at(player.global_position)
 
 
