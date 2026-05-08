@@ -852,12 +852,6 @@ transform = Transform3D(-29.086485, -77.110085, 56.639313, -5.5189047, 60.45246,
 shadow_enabled = true
 omni_range = 4096.0
 
-[node name="Camera" type="Camera3D" parent="mold_monster" unique_id=558040403]
-transform = Transform3D(68.58809, -31.737005, 65.48616, -1.0816634, 89.53433, 44.524532, -72.76335, -31.246864, 61.066597, 7.4811316, 5.343665, 6.50764)
-fov = 28.841545
-near = 0.1
-far = 100.0
-
 [node name="Skeleton3D" type="Skeleton3D" parent="mold_monster" unique_id=384566741]
 bones/0/name = "mixamorig_Hips"
 bones/0/parent = -1
