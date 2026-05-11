@@ -1,13 +1,13 @@
 extends Node3D
 
 @export var enemy_scene : PackedScene
-@export var spawn_delay := 5.0
-@export var max_alive_enemies := 4
+@export var spawn_delay : float = 5.0
+@export var max_alive_enemies : int = 4
 
 var spawn_points: Array[Node] = []
-var alive_enemies := 0
-var spawned_count := 0
-var spawning_active := false
+var alive_enemies : int = 0
+var spawned_count : int = 0
+var spawning_active : int = false
 
 func _ready() -> void:
 	for child in get_children():

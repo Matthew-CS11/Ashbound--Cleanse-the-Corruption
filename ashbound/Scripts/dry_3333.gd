@@ -1,5 +1,5 @@
 extends Node3D
-var on_fire
+var on_fire : bool
 
 func _on_area_3d_area_entered(_area: Area3D) -> void:
 	on_fire = true

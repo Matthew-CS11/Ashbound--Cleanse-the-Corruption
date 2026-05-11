@@ -8,9 +8,9 @@ const BOB_WALK_SPEED = 14.0
 const BOB_SPRINT_SPEED = 22.0
 const BOB_INTENSITY = .50
 
-@export var max_health := 100
+@export var max_health : int = 100
 @export var ammo_in_pack : int = 24
-@export var damage_taken := 10
+@export var damage_taken : int = 10
 
 @onready var neck: Node3D = $Neck
 @onready var camera_3d: Camera3D = $Neck/Camera3D

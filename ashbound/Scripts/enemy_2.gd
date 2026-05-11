@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
-@export var max_health := 50
-@export var SPEED := 12
+@export var max_health : int = 50
+@export var SPEED : int = 12
 
 @onready var navigation_agent_3d: NavigationAgent3D = $NavigationAgent3D
 @onready var player: Player = $"../player"

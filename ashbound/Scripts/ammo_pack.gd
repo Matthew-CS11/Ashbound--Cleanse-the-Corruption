@@ -5,7 +5,7 @@ signal picked_up
 @onready var ammo_pack: Node3D = $"."
 @onready var interact_label: Label3D = $interact_label
 
-var player_is_in_area := false
+var player_is_in_area : bool = false
 
 func _process(_delta: float) -> void:
 	if player_is_in_area:
