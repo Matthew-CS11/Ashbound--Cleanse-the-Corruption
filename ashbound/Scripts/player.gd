@@ -33,6 +33,7 @@ var head_bob_vector = Vector2.ZERO
 var head_bob_index = 0.0
 var health : int
 var num = 1
+var hurt_box_entered = false
 
 func _ready() -> void:
 	health = max_health
@@ -248,4 +249,10 @@ func _on_node_3d_boii_3() -> void:
 func _on_hurt_box_body_entered(body: Node3D) -> void:
 	if body.is_in_group("Enemy"):
 		print("oww")
+		hurt_box_entered = true
 		take_damage(damage_taken)
+
+
+func _on_hurt_box_body_exited(body: Node3D) -> void:
+	if body.is_in_group("Enemy"):
+		hurt_box_entered = false
