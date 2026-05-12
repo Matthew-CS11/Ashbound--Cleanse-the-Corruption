@@ -10,7 +10,7 @@ const BOB_INTENSITY = .50
 
 @export var max_health : int = 100
 @export var ammo_in_pack : int = 24
-@export var damage_taken : int = 10
+@export var damage_taken : int = 2
 
 @onready var neck: Node3D = $Neck
 @onready var camera_3d: Camera3D = $Neck/Camera3D
@@ -33,6 +33,7 @@ var head_bob_vector = Vector2.ZERO
 var head_bob_index = 0.0
 var health : int
 var num = 1
+var canTakeDamage := false
 
 func _ready() -> void:
 	health = max_health
@@ -50,6 +51,8 @@ func _process(_delta: float) -> void:
 	var state_machine = knife_animation_tree.get("parameters/playback")
 	var state_machinep = pistol_animation_tree.get("parameters/playback")
 	var state_machinea = ak_animation_tree.get("parameters/playback")
+	if canTakeDamage:
+		take_damage(damage_taken)
 	if Input.is_action_just_pressed("AK"):
 		num = 3
 		state_machinea.travel("take")
@@ -247,5 +250,12 @@ func _on_node_3d_boii_3() -> void:
 
 func _on_hurt_box_body_entered(body: Node3D) -> void:
 	if body.is_in_group("Enemy"):
+		canTakeDamage = true
 		print("oww")
-		take_damage(damage_taken)
+		
+
+
+func _on_hurt_box_body_exited(body: Node3D) -> void:
+	if body.is_in_group("Enemy"):
+		canTakeDamage = false
+		print("yay")
