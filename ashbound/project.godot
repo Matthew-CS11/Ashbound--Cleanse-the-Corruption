@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Ashbound"
-run/main_scene="uid://bl7ivyxke7fwj"
+run/main_scene="uid://b07r7vgpreh5m"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
