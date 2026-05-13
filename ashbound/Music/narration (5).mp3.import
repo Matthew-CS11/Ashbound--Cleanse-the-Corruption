@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://swsslaxgfv62"
+path="res://.godot/imported/narration (5).mp3-2430092e208f2da061cf6d2dcd326366.mp3str"
+
+[deps]
+
+source_file="res://Music/narration (5).mp3"
+dest_files=["res://.godot/imported/narration (5).mp3-2430092e208f2da061cf6d2dcd326366.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
