@@ -7,6 +7,9 @@ size = Vector3(1, 0.9289551, 2.0024414)
 
 [node name="bed_woof" unique_id=621195792 instance=ExtResource("1_1ilq4")]
 
+[node name="Bed" parent="." index="0" unique_id=2012919186]
+lod_bias = 0.5
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1" unique_id=1636547196]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.48156738, 0.001953125)
 shape = SubResource("BoxShape3D_1ilq4")

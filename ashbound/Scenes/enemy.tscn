@@ -1198,46 +1198,55 @@ bones/48/rotation = Quaternion(-1.4954225e-10, 7.1557343e-17, 2.7755574e-17, 1)
 bones/48/scale = Vector3(1, 1, 1)
 
 [node name="right_leg" type="MeshInstance3D" parent="mold_monster/Skeleton3D" unique_id=1577894162]
+lod_bias = 0.5
 mesh = SubResource("ArrayMesh_7owq7")
 skin = SubResource("Skin_5lrdg")
 skeleton = NodePath("..")
 
 [node name="left_leg" type="MeshInstance3D" parent="mold_monster/Skeleton3D" unique_id=207212814]
+lod_bias = 0.5
 mesh = SubResource("ArrayMesh_r7i38")
 skin = SubResource("Skin_8es7o")
 skeleton = NodePath("..")
 
 [node name="left_arm" type="MeshInstance3D" parent="mold_monster/Skeleton3D" unique_id=1887201756]
+lod_bias = 0.5
 mesh = SubResource("ArrayMesh_cpswo")
 skin = SubResource("Skin_bpqqw")
 skeleton = NodePath("..")
 
 [node name="right_arm" type="MeshInstance3D" parent="mold_monster/Skeleton3D" unique_id=2039870837]
+lod_bias = 0.5
 mesh = SubResource("ArrayMesh_r07o3")
 skin = SubResource("Skin_s3c57")
 skeleton = NodePath("..")
 
 [node name="thorn_crown" type="MeshInstance3D" parent="mold_monster/Skeleton3D" unique_id=622143009]
+lod_bias = 0.5
 mesh = SubResource("ArrayMesh_46pp7")
 skin = SubResource("Skin_6l8qw")
 skeleton = NodePath("..")
 
 [node name="mouth" type="MeshInstance3D" parent="mold_monster/Skeleton3D" unique_id=351933665]
+lod_bias = 0.5
 mesh = SubResource("ArrayMesh_x2fuq")
 skin = SubResource("Skin_d8iqn")
 skeleton = NodePath("..")
 
 [node name="neck" type="MeshInstance3D" parent="mold_monster/Skeleton3D" unique_id=380171965]
+lod_bias = 0.5
 mesh = SubResource("ArrayMesh_iopqo")
 skin = SubResource("Skin_igjcr")
 skeleton = NodePath("..")
 
 [node name="shoulder_horns" type="MeshInstance3D" parent="mold_monster/Skeleton3D" unique_id=899762410]
+lod_bias = 0.5
 mesh = SubResource("ArrayMesh_q2qf1")
 skin = SubResource("Skin_05w4u")
 skeleton = NodePath("..")
 
 [node name="torso" type="MeshInstance3D" parent="mold_monster/Skeleton3D" unique_id=799876693]
+lod_bias = 0.5
 mesh = SubResource("ArrayMesh_4qb0p")
 skin = SubResource("Skin_41ksx")
 skeleton = NodePath("..")
