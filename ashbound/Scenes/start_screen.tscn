@@ -32,14 +32,14 @@ offset_bottom = 503.0
 theme_override_font_sizes/font_size = 32
 text = "Start"
 
-[node name="totorial" type="Button" parent="." unique_id=391493360]
+[node name="tutorial" type="Button" parent="." unique_id=391493360]
 layout_mode = 0
 offset_left = 672.0
 offset_top = 422.0
 offset_right = 834.0
 offset_bottom = 505.0
 theme_override_font_sizes/font_size = 32
-text = "Totorial"
+text = "Tutorial"
 
 [node name="Label" type="Label" parent="." unique_id=1419735392]
 layout_mode = 0
@@ -51,4 +51,4 @@ text = "ASHBOUND"
 label_settings = SubResource("LabelSettings_ncxyx")
 
 [connection signal="pressed" from="startButton" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="totorial" to="." method="_on_totorial_pressed"]
+[connection signal="pressed" from="tutorial" to="." method="_on_totorial_pressed"]
