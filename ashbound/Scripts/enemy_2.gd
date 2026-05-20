@@ -6,6 +6,7 @@ extends CharacterBody3D
 @onready var navigation_agent_3d: NavigationAgent3D = $NavigationAgent3D
 @onready var player: Player = $"../player"
 
+
 var health : int
 
 signal killed

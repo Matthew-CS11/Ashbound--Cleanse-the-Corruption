@@ -5,8 +5,8 @@ var trees_burned=0
 func _ready() -> void:
 	for node in node_3d.get_children():
 		node.burn.connect(_on_tree_burned)
-func _process(delta: float) -> void:
-	if trees_burned>12:
+func _process(_delta: float) -> void:
+	if trees_burned>17:
 		visible=false
 		queue_free()
 		

@@ -835,7 +835,9 @@ radius = 0.59765625
 height = 3.8081665
 
 [node name="Enemy_2" type="CharacterBody3D" unique_id=285437688 groups=["Enemy"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.14392018, 0)
 script = ExtResource("1_t3d2o")
+max_health = 75
 
 [node name="Hurt_Box" type="Area3D" parent="." unique_id=1075946871 groups=["damage_area"]]
 
@@ -847,11 +849,6 @@ shape = SubResource("CapsuleShape3D_bc858")
 
 [node name="mold_monster" type="Node3D" parent="." unique_id=1777346050]
 transform = Transform3D(1.665, 0, 0, 0, 1.665, 0, 0, 0, 1.665, 0, -1.2, 0)
-
-[node name="Lamp" type="OmniLight3D" parent="mold_monster" unique_id=1635492305]
-transform = Transform3D(-29.086485, -77.110085, 56.639313, -5.5189047, 60.45246, 79.46724, -95.51713, 19.988352, -21.83913, 4.0762453, 5.9038625, -1.005454)
-shadow_enabled = true
-omni_range = 4096.0
 
 [node name="Skeleton3D" type="Skeleton3D" parent="mold_monster" unique_id=1723372647]
 bones/0/name = "mixamorig_Hips"
