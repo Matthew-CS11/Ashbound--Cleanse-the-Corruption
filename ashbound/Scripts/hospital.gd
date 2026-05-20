@@ -16,3 +16,7 @@ func _ready() -> void:
 func _on_retry_button_pressed() -> void:
 	print("im pressed")
 	get_tree().reload_current_scene()
+
+
+func _on_area_3d_area_entered(area: Area3D) -> void:
+	pass # Replace with function body.
